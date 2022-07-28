@@ -1,0 +1,286 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DeepONet based climate bias correction &mdash; DARPA-ACTM (MIT-BROWN-PNNL) 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Non-intrusive LSTM architecture" href="LSTM_based_offline_correction.html" />
+    <link rel="prev" title="Extreme Events" href="Extreme_Events.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DARPA-ACTM (MIT-BROWN-PNNL)
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Data.html">DATA for E3SM hybrid modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Extreme_Events.html">Extreme Events</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">DeepONet based climate bias correction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#problem-setup">Problem Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deeponet-setup">DeepONet Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-setup">Code Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#results">Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="LSTM_based_offline_correction.html">Non-intrusive LSTM architecture</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DARPA-ACTM (MIT-BROWN-PNNL)</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>DeepONet based climate bias correction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/DeepONet_Online.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="deeponet-based-climate-bias-correction">
+<h1>DeepONet based climate bias correction<a class="headerlink" href="#deeponet-based-climate-bias-correction" title="Permalink to this heading">¶</a></h1>
+<section id="problem-setup">
+<h2>Problem Setup<a class="headerlink" href="#problem-setup" title="Permalink to this heading">¶</a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/fig_1.png"><img alt="Alternative text" src="../_images/fig_1.png" style="width: 600px;" /></a>
+</figure>
+<p>The main idea is to use a DeepONet to replace the nudging mechanism for the online bias correction for the state variables <em>U</em> and <em>V</em>.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/fig_2.png"><img alt="Alternative text" src="../_images/fig_2.png" style="width: 600px;" /></a>
+</figure>
+</section>
+<section id="deeponet-setup">
+<h2>DeepONet Setup<a class="headerlink" href="#deeponet-setup" title="Permalink to this heading">¶</a></h2>
+<p>The overall process can be divided into three parts:</p>
+<ol class="arabic simple">
+<li><p>Encode X~bf <em>(X: state variable, bf: before nudging)</em></p></li>
+<li><p>Predict Nudging tendency &lt;span style=”text-decoration:overline”&gt;X~ndg&lt;/span&gt;  <em>(ndg: nudging tendency)</em> for X~bf in the encoded domain.</p></li>
+<li><p>Decode the &lt;span style=”text-decoration:overline”&gt;X~ndg&lt;/span&gt;  to the nudging tendency X~ndg in the original domain.</p></li>
+</ol>
+<p>The over all architecture is shown in the figure below.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/fig_3.png"><img alt="Alternative text" src="../_images/fig_3.png" style="width: 600px;" /></a>
+</figure>
+</section>
+<section id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this heading">¶</a></h2>
+<p><em>State variables</em> : <em>U</em> (East-West wind component) , <em>V</em> (North-South wind component)</p>
+<p><em>Dimension</em> <em>(Nz, Nt, Nx, Ny)</em>,</p>
+<p>where <em>Nz=72, Nt=248, Nx=70, Ny=70</em></p>
+<p>For the current test case, we select the folowing patch for the DeepONet training</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/fig_4.png"><img alt="Alternative text" src="../_images/fig_4.png" style="width: 600px;" /></a>
+</figure>
+</section>
+<section id="code-setup">
+<h2>Code Setup<a class="headerlink" href="#code-setup" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Encoder Decoder output</p>
+<blockquote>
+<div><p>To see the encoder decoder outputs for a particular Field Variable:</p>
+<blockquote>
+<div><ul>
+<li><p>open the job_sbatch file.</p></li>
+<li><p>Enter the datapath in which the data is in  DATAPATH=’’. For example if you have the data in the path ‘/Users/abora/NEW_AE_DATA/’, then enter DATAPATH=’/Users/abora/NEW_AE_DATA/’.</p></li>
+<li><dl>
+<dt>We have three kinds of data in three different folders</dt><dd><blockquote>
+<div><ul class="simple">
+<li><p>‘NDG_TEND/’ : for the nudging tendency data</p></li>
+<li><p>‘BF_NDG/’: for the before nudged data</p></li>
+<li><p>‘REF/’ : for the reference data</p></li>
+</ul>
+</div></blockquote>
+<p>Based on whichver data we want type the folder name in FOLDER_NAME=’’. For example if we want the data for nudging tendency enter FOLDER_NAME=’NDG_TEND/’.</p>
+</dd>
+</dl>
+</li>
+<li><p>Enter the state variable name in the FIELD=”” . For example if you want to see the results for U type FIELD=”U”.</p></li>
+<li><p>Enter the time for which you want to see the plots in PLOT_TIME= . For example you want to see the plot for t=100, then enter PLOT_TIME=100.</p></li>
+<li><p>Make an empty folder Figs in same directy as where the code is to save all the figures.</p></li>
+<li><p>Now type sbatch job.sbatch in your terminal.</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</li>
+</ol>
+<p>For the implementation and code click [<a class="reference external" href="https://github.com/raj-brown/darpa_climate_code">here</a>]</p>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this heading">¶</a></h2>
+<p>For the results of the DeepONet click [<a class="reference external" href="https://drive.google.com/drive/folders/1rmrz2I5v8Mi5MB3nR90Ny-FyzvdVzx7r?usp=sharing">here</a>]</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="LSTM_based_offline_correction.html" class="btn btn-neutral float-right" title="Non-intrusive LSTM architecture" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Extreme_Events.html" class="btn btn-neutral float-left" title="Extreme Events" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2022, MIT-BROWN-PNNL
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

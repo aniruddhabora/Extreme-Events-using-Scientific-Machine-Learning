@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DATA for E3SM hybrid modelling &mdash; DARPA-ACTM (MIT-BROWN-PNNL) 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Extreme Events" href="Extreme_Events.html" />
+    <link rel="prev" title="Quantification of extreme weather events and their future changes using Physics-Informed DeepONet modeling and functional priors" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DARPA-ACTM (MIT-BROWN-PNNL)
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">DATA for E3SM hybrid modelling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#climate-model">Climate Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nudging-approach">Nudging Approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nudged-training-simulation-with-eam">Nudged training simulation with EAM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Extreme_Events.html">Extreme Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DeepONet_Online.html">DeepONet based climate bias correction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LSTM_based_offline_correction.html">LSTM</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DARPA-ACTM (MIT-BROWN-PNNL)</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>DATA for E3SM hybrid modelling</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/Data.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="data-for-e3sm-hybrid-modelling">
+<h1>DATA for E3SM hybrid modelling<a class="headerlink" href="#data-for-e3sm-hybrid-modelling" title="Permalink to this heading">¶</a></h1>
+<p>The aim of this project is to develop coarse-scale and data-informed, hybrid methods that produce accurate statistical predictions of climate models. Specifically,  contemporary climate models are characterized by vast computational costs. To this end, they are not practical for informing decisions for policy making or stakeholders, e.g. answering questions such as what is the probability of a catastrophic event over a major city for the next two decades? To reduce this computational cost one can employ coarser-scale climate models. However, this will introduce important model errors which are not acceptable.</p>
+<p>The goal of the presented hybrid methodology is to bridge this gap. Specifically, we use short-time climate simulations from highly accurate models, in order to machine-learn a correction that should be applied to a coarse-scale model. The necessary corrective tendencies are first estimated from a coarse-scale hindcast simulation which is linearly nudged towards a solution derived from the highly accurate models. The machine learning (ML) model is trained to predict the nudging tendencies using only the state of
+the coarse-scale model as inputs.  The resulted ML model can then be used in a forecast to apply a corrective tendency to the prognostic state of the atmospheric model at each time step in order to reduce atmospheric model error growth and keep the model evolution on a more realistic manifold.</p>
+<section id="climate-model">
+<h2>Climate Model<a class="headerlink" href="#climate-model" title="Permalink to this heading">¶</a></h2>
+<p>To test our proposed ML method we use the E3SM Atmosphere Model (EAM). The EAM uses a Spectral Element Dynamical Core coupled with a sophisticated physics parameterizations package and an interactive land surface model [<a class="reference external" href="https://doi.org/10.1029/2019MS001629">Rasch_et_al:2019</a>] , [<a class="reference external" href="https://doi.org/10.1029/2018MS001350">Xie_et_al:2018</a>]. It is the atmospheric component of the coupled Earth system model developed by the U.S. Department of Energy [<a class="reference external" href="https://doi.org/10.1029/2018MS001603">Golaz_et_al:2019</a>]. The operational version of EAM uses 1-degree (100~km) horizontal grid for low-resolution (EAM-LR) and  0.25-degree horizontal grid (25~km) for high-resolution (EAM-HR) simulations. There are 72 layers in the vertical, extending from the Earth’s surface to about 0.1 hPa (64 km).</p>
+<p>We used the EAM-LR in our project as the target model to be improved with the ML-learn correction. The key subgrid-scale physical processes considered in EAM  include deep convection [<a class="reference external" href="https://doi.org/10.1080/07055900.1995.9649539">Zhang_McFarlane:1995</a>], turbulence and shallow convection [<a class="reference external" href="https://doi.org/10.1175/1520-0469(2002)059">Golaz_et_al:2002</a>], [<a class="reference external" href="https://doi.org/10.1175/1520-0469(2002)059">Larson_et_al:2002</a>], cloud microphysics [<a class="reference external" href="https://doi.org/10.1175/2008JCLI2105.1">Morrison:2008</a>], [<a class="reference external" href="https://doi.org/10.1175/2008JCLI2105.1">Gettelman:2015</a>], [<a class="reference external" href="https://doi.org/10.5194/acp-14-10411-2014">Wang_et_al:2014</a>], aerosol life cycle [<a class="reference external" href="https://doi.org/10.5194/gmd-9-505-2016">Liu_et_al:2016</a>], [<a class="reference external" href="https://doi.org/10.1029/2019MS001851">Wang_et_al:2020</a>], and radiation [<a class="reference external" href="https://doi.org/10.1029/2019MS001851">Iacono_et_al:2008</a>], [<a class="reference external" href="https://doi.org/10.1029/97JD00237">Mlawer_et_al:1997</a>]. Sea surface temperatures and sea ice extent are prescribed with the observational data from the National Oceanic and Atmospheric Administration (NOAA) Optimum Interpolation (OI) analysis [<a class="reference external" href="https://doi.org/10.1175/1520-0442(2002)015">Reynolds_2002_SST</a>].  The external forcings, including volcanic
+aerosols, solar variability, concentrations of greenhouse gases, and anthropogenic emissions of aerosols and their precursors, were prescribed following the World Climate Research Programme (WCRP) Coupled Model Intercomparison Project Phase 6 (CMIP6) [<a class="reference external" href="https://doi.org/10.5194/gmd-9-1937-2016">Eyring_et_al:2016,Hoesly_et_al:2018</a>], [<a class="reference external" href="https://doi.org/10.5194/gmd-11-369-2018">Hoesly_et_al:2018</a>] ,[<a class="reference external" href="https://doi.org/10.5194/gmd-13-461-2020">Feng_et_al:2020</a>].</p>
+<p>The EAM model code for the development of ML model can be found [<a class="reference external" href="https://github.com/zhangshixuan1987/E3SM/tree/EAM.0_for_darpa">here</a>].</p>
+</section>
+<section id="nudging-approach">
+<h2>Nudging Approach<a class="headerlink" href="#nudging-approach" title="Permalink to this heading">¶</a></h2>
+<p>The nudging approach is employed to estimate the biases in EAM-LR model state including temperature (T), humidity (Q), zonal wind (U) and meridional wind (V) for the ML training. Here, nudging constrains the model solution of $X_m$ at every grid point toward the reference state of $X_r$ by adding a linear relaxation term to the EAM model equation:</p>
+<div class="math notranslate nohighlight">
+\[\begin{eqnarray} \label{eqn:eam_nudging}
+\dfrac{\partial \boldsymbol{X_m}}{\partial t} =
+    \underbrace {\boldsymbol{D} \left(\boldsymbol{X_m} \right)}_{dynamics}
+    +  \underbrace {\boldsymbol{P} \left(\boldsymbol{X_m} \right)}_{physics}
+    + \boldsymbol{\dot{R}}
+\end{eqnarray}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{eqnarray}  \label{eqn:ndg_tend}
+\boldsymbol{\dot{R}} = - \underbrace { \dfrac{ \boldsymbol{X_m} - \boldsymbol{X_r}}{\tau}}_{nudging}
+\end{eqnarray}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\boldsymbol{X}_{m}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{X}_{\boldsymbol{r}}\)</span>  refer to the state variables of U, V, T, Q from the EAM predictions and the reference data sets, respectively. The first term on the right-hand side of of the 1st equation represents the effects of large-scale dynamics (e.g. large-scale advection etc.). The second term denotes the parameterized effects of physical processes such as clouds and convection that operate at scales smaller than the model grid and affect the overall dynamics of the system. The third term <span class="math notranslate nohighlight">\(\dot{\boldsymbol{R}}\)</span> is a nudging tendency term that acts as an error correction for <span class="math notranslate nohighlight">\(\boldsymbol{X}_{\boldsymbol{m}}\)</span>, calculated as the difference between <span class="math notranslate nohighlight">\(\boldsymbol{X}_{\boldsymbol{m}}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{X}_{\boldsymbol{r}}\)</span>, scaled by the relaxation time scale <span class="math notranslate nohighlight">\(\tau\)</span> in the 2nd equation.</p>
+<p>Pink boxes in Figure 1 illustrate where the nudging-related calculations occur in the default EAM. In a nudged simulation,  after the resolved dynamics (see blue box in figure) has been calculated,  a nudging tendency term in the form of Eq 2 is calculated for each nudged variable with  <span class="math notranslate nohighlight">\(\boldsymbol{X}_{m}\)</span> being the value of $X$ after the dynamical core. After the entire physics parameterization suite has been calculated, the sum of the parameterization-induced tendencies and the nudging tendencies are passed to the physics-dynamics coupling interface.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/flow.png"><img alt="Alternative text" src="../_images/flow.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 1: Flowcharts showing the sequence of dynamics and physics calculations within one time step in an EAM simulation. Pink boxes indicate where the nudging-related calculations occur. The calculation of nudging tendency using Eq. (2) occurs before the radiation parameterization.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="nudged-training-simulation-with-eam">
+<h2>Nudged training simulation with EAM<a class="headerlink" href="#nudged-training-simulation-with-eam" title="Permalink to this heading">¶</a></h2>
+<p>In Phase 1, the ML training data are constructed following a “nudge-to-observations” approach described in Watt-Meyer et. al. (2021) [<a class="reference external" href="https://doi.org/10.1029/2021GL092555">Watt-Meyer_et_al:2021</a>]. In the “nudge-to-observations”  approach employed by this project, the observations (i.e. reference data sets) are taken from the ERA5 reanalysis developed by the European Centre for Medium-Range Weather Forecasts (ECMWF) [<a class="reference external" href="https://doi.org/10.1002/qj.3803">Hersbach_et_al:2020</a>]. The raw ERA5 reanalysis data are produced on a <span class="math notranslate nohighlight">\(0.25^{o}\)</span> horizontal grid over the globe, which are spatially remapped to the cubed-sphere grid and the 72 model layers used by EAM, following the method used in the Community Earth System Model Version 2 [<a class="reference external" href="https://ncar.github.io/CAM/doc/build/html/users_guide/physics-modifications-via-the-namelist.html#nudging">CESM2</a>]. Topographical differences between EAM and the reanalysis data are taken into account during the vertical interpolation.</p>
+<p>Figure~ref{fig:bias_vs_ndg_tend}a shows the distribution of monthly mean zonal averaged temperature differences between the EAM free-running simulations (i.e., CLIM) and ERA5 reanalysis (i.e. reference) in January 2010. Most model layers in the Tropics and mid-latitudes exhibit a cold temperature bias. In these regions, the positive temperature nudging tendencies in the nudged simulation act to correct the cold biases (Fig.~ref{fig:bias_vs_ndg_tend}b).  Generally the time mean nudging tendency removes the systematic “background error” found in the EAM free-running simulations. However, the nudging may not always help to reduce the systematic errors. For example, nudging both wind and temperature can produce a positive tendency of temperature in the northern hemisphere high-latitude (Fig.~ref{fig:bias_vs_ndg_tend}b), where the free-running simulations exhibit warm temperature biases, as shown in Fig.~ref{fig:bias_vs_ndg_tend}a, suggesting a role of positive feedback that amplifies the upper level temperature biases in the free-running simulations. Using a nudging strategy that constrains humidity in addition to wind and temperature produces rather different nudging tendencies (Fig.~ref{fig:bias_vs_ndg_tend}c), revealing the complex relationships between the nudging corrections and the state variables through the nonlinear governing equation (Eq.~ref{eqn:eam_nudging}). Therefore, we design different nudging strategies to provide an ensemble of nudged simulations with different nudging tendencies and state variables for the ML training.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/mean_bias.png"><img alt="Alternative text" src="../_images/mean_bias.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 2 (a) monthly mean zonally averaged temperature differences (ΔT, unit: K) in January 2010 between ERA5 and EAM’s free-running simulation (CLIM in Table ??), (b-c) monthly mean nudging tendencies of temperature (T tend, unit K s−1) from the simulation by nudging EAM towards ERA5 reanalysis. The wind and temperature fields were nudged in the simulation (NDG UVT tau6 in Table ??) for panel (b), while the wind, temperature and humidity were nudged in the simulation (NDG UVTQ tau24 in Table ??) for panel (c). The y-axis of each panel shows the approximated pressure for the model levels in E.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Three groups of training data are generated in phase 1 (Table~ref{tabtrainning_exp}). The first group consists of the reference solution for U, V, T, Q that are derived from ERA5 reanalysis. The data are interpolated to the same grid and vertical levels for E3SM. The second group is a free-running baseline simulation referred to as CLIM. The before-radiation values of U, V, T, Q were archived to represent the baseline solution from the EAM-LR. The third group of simulations was nudged toward ERA5 reanalysis to derive the corrective tendencies of U, V, T, Q for ML training. The three pairs of  simulation are conducted to construct an ensemble of training data sets by applying nudging:</p>
+<ul class="simple">
+<li><p>to the horizontal winds with <span class="math notranslate nohighlight">\(\tau\)</span> = 6  (labeled “NDG_UV”)</p></li>
+<li><p>to both winds and temperature  with <span class="math notranslate nohighlight">\(\tau\)</span> = 6 (labeled “NDG_UVT”)</p></li>
+<li><p>to winds, temperature, and humidity <span class="math notranslate nohighlight">\(\tau\)</span> = 6 (labeled “NDG_UVTQ”)</p></li>
+</ul>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/table_1.png"><img alt="Alternative text" src="../_images/table_1.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-text">Table 1 List of reference data and EAM-LR simulations for machine learning. Note nudging is applied at every model physics time step (0.5-hr) for EAM.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>All EAM simulations were conducted for 11-years from 2007 to 2017. The first year is for model spin-up and the remaining 10-years are used to construct the input data for ML training. Table~ref{tab:varlist} presents the list of the input variables for ML training. The  3-D model state (U, V, T, Q)  variables are the instantaneous model output, while the nudging tendencies are averaged values during a 3-hr period for each time sample. The data are available at url{https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/SE_PG2/}.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/table_2.png"><img alt="Alternative text" src="../_images/table_2.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-text">Table2 Description of notation. Notes: the (x, y, z, t) is corresponding to the (latitude, logitude, levels, time) dimension in the EAM model output. Each notation contains the four state variables (i.e. $U$, $V$, $T$, $Q$) that are interested in this projec</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Extreme_Events.html" class="btn btn-neutral float-right" title="Extreme Events" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="Quantification of extreme weather events and their future changes using Physics-Informed DeepONet modeling and functional priors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2022, MIT-BROWN-PNNL
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

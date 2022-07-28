@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Extreme Events &mdash; DARPA-ACTM (MIT-BROWN-PNNL) 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="DeepONet based climate bias correction" href="DeepONet_Online.html" />
+    <link rel="prev" title="DATA for E3SM hybrid modelling" href="Data.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DARPA-ACTM (MIT-BROWN-PNNL)
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Data.html">DATA for E3SM hybrid modelling</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Extreme Events</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tropical-cyclones-tcs">Tropical Cyclones (TCs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extratropical-cyclones-etcs">Extratropical Cyclones (ETCs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#atmospheric-rivers-ars">Atmospheric rivers (ARs)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="DeepONet_Online.html">DeepONet based climate bias correction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LSTM_based_offline_correction.html">LSTM</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DARPA-ACTM (MIT-BROWN-PNNL)</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Extreme Events</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/Extreme_Events.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="extreme-events">
+<h1>Extreme Events<a class="headerlink" href="#extreme-events" title="Permalink to this heading">¶</a></h1>
+<p>Here, we show three examples of extreme weather events, including including tropical cyclones (TCs), extratropical cyclones (ETCs),  and atmospheric rivers to demonstrate that the nudging training datasets can be used to train the ML-corrections that can be applied to gain a capture of the extreme weather events in the coarse-scale EAMv2 model.</p>
+<section id="tropical-cyclones-tcs">
+<h2>Tropical Cyclones (TCs)<a class="headerlink" href="#tropical-cyclones-tcs" title="Permalink to this heading">¶</a></h2>
+<p>The tropical cyclone (TC) is defined as a cyclonic structure with a distinct warm core. Figure~ref{fig:tc_trk_density_global} shows the TC track density maps from the ERA5 reanalysis (reference data), EAM free-running simulations (i.e CLIM), and two nudged EAM simulations. The results are generated by TempestExtremes, a software package developed for the analysis of extreme weather event ( url{https://climate.ucdavis.edu/tempestextremes.php}) cite{Ullrich_et_al:2021}. The TC track density is defined as the total number of 6-hourly TCs occurrences per 1$^o$× 1$^o$ grid box. A significant mismatch of TC generations between ERA5 (Fig.~ref{fig:tc_trk_density_global}a) and CLIM (Fig.~ref{fig:tc_trk_density_global}b) is pronounced in the northeast Pacific and north Atlantic ocean regions. The mismatch is significantly reduced when the EAM was nudged towards the ERA5 reanalysis (Fig.~ref{fig:tc_trk_density_global}c–d).  Figure~ref{fig:tc_trk_traj_NA} further shows the TC trajectories within the northeast Pacific and north Atlantic ocean regions. It is clearly that the nudged simulations produces two times more TCs than the CLIM. More interestingly, the hurricane Sandy (black dot line) that hit United States in 2012 is well reproduced in the nudged EAM simulations.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/Track_density.png"><img alt="Alternative text" src="../_images/Track_density.png" style="width: 900px;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 3. Track density maps for tropical cyclones (TCs) tracked in in ERA5 reanalysis (top right panel), EAM free-running (i.e CLIM, top left panel),  EAM simulations nudged towards wind fields from ERA5 reanalysis (i.e. NDGUV, bottom left panel) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (i.e. NDGUVTQ, bottom right panel)  during the period of 2007–2017. Units are number of 6-hourly TCs occurrences per $1^{o} times 1^{o}$ grid box.} label{fig:tc_trk_density_global</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/Trop_cyc.png"><img alt="Alternative text" src="../_images/Trop_cyc.png" style="width: 900px;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 4. Tropical cyclone trajectories within [0-70$^{o}$N, 10-160$^{o}$W] during the period of 2007–2017 from ERA5 reanalysis (top right panel), EAM free-running (i.e CLIM, top left panel),  EAM simulations nudged towards wind fields from ERA5 reanalysis (i.e. NDGUV, bottom left panel) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (i.e. NDGUVTQ, bottom right panel) . TempestExtremes is used to track TCs in all the simulations. Coloring denotes the instantaneous Saffir–Simpson category of the tropical cyclone. The categories are computed from sea level pressure and applying the pressure–wind relationship cite{Atkinson_and_Holliday:1977, Knaff_and_Zehr:2007}. The black dots indicate the track of Hurricane Sandy that hit the United States in 2012.} label{fig:tc_trk_traj_NA}</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Figure~ref{fig:tc_trk_traj_sandy} further shows the track of Hurricane Sandy from the observations, ERA5 reanalysis and two nudged EAM simulations. We can see that the EAM can simulate the track of Hurricane Sandy reasonably well when the reanalysis data is nudged. Also, the temperature and humidity nudging results in a better capture of storm track for this case.  See animation [<a class="reference external" href="https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/post_processing/storm/TempestExtremes/figure/TCS/sandy/animate_sandy.gif">here</a>] for the development of the Hurricane Sandy  from 1800 UTC 21 to 1200 UTC 31 October 2012 in the ERA5 reanalysis and  nudged EAM simulations.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/Sandy.png"><img alt="Alternative text" src="../_images/Sandy.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 5. Tropical cyclone trajectories for hurricane Sandy from 1800 UTC 21 to 1200 UTC 31 October 2012 from observations (best track, black dots), ERA5 reanalysis (reference, red line), EAM simulations nudged towards wind fields from ERA5 reanalysis (NDGUV, cyan line) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (NDGUVTQ, blue line). Note that nudging wind and temperature (i.e. NDGUVT) produces similar results as in NDGUVTQ.  The tropical cyclone first appeared on 1200 UTC 22 October,  1800 UTC 23 October and 1200 UTC 24 October in the ERA5 analysis, NDGUV and NDGUVTQ, respectively.} label{fig:tc_trk_traj_sandy}</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="extratropical-cyclones-etcs">
+<h2>Extratropical Cyclones (ETCs)<a class="headerlink" href="#extratropical-cyclones-etcs" title="Permalink to this heading">¶</a></h2>
+<p>The extratropical cyclone (ETC) is defined as a cyclonic structure with no distinct warm core. Figure~ref{fig:etc_trk_density_global} shows the ETC track density maps from the ERA5 reanalysis (reference data), EAM free-running simulations (i.e CLIM), and two nudged EAM simulations. The results are generated by TempestExtremes, and the ETC track density represents the total number of 6-hourly ETCs occurrences per 5$^o$× 5$^o$ grid box. We can see that the EAM low-resolution model underestimates the ETC generations due to the lack of resolutions. However, nudging leads to a clear improvements in the overall statistics of ETC generations over Northern hemisphere storm track regions, partly reveals the impact of mean state biases on the statistics of ETCs.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../_images/Track_density_2.png"><img alt="Alternative text" src="../_images/Track_density_2.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 6. Track density maps for extratropical cyclones (ETCs) tracked in ERA5 reanalysis (top right panel), EAM free-running (i.e CLIM, top left panel),  EAM simulations nudged towards wind fields from ERA5 reanalysis (i.e. NDGUV, bottom left panel) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (i.e. NDGUVTQ, bottom right panel)  during the period of 2007–2017. Units are number of 6-hourly TCs occurrences per $5^{o} times 5^{o}$ grid box.} label{fig:etc_trk_density_global}</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>The ETC induced snowstorms during 22-24 January 2016 caused heavy snowfall in Northeast U.S.  Figure~ref{fig:etc_2016} shows the horizontal distribution of 850-hPa wind (m/s, vector) and mean sea level pressure (hPa, shading in first row) at 12Z, 23 January 2016. We can see that the horizontal distribution of ETC-related fields are captured reasonably well in the nudged EAM simulations. See animation [<a class="reference external" href="https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/post_processing/storm/TempestExtremes/figure/ETCS/case/animate_etc_trk_2016.gif">here</a>] for the development of the ETC from 0000 UTC 21 to 1800 UTC 24 January.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../_images/Hoz_cal_1.png"><img alt="Alternative text" src="../_images/Hoz_cal_1.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 7. Horizontal distribution of 850-hPa wind (m/s, vector) and mean sea level pressure (hPa, shading) at 12Z, 23 January 2016 from (left panel) ERA5 reanalysis, (middle panel) EAM simulations nudged towards wind fields from ERA5 reanalysis and (right panel) EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis.The black dots denotes the track of the ETC from 12Z 22 to 12 Z 23 January 2016.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="atmospheric-rivers-ars">
+<h2>Atmospheric rivers (ARs)<a class="headerlink" href="#atmospheric-rivers-ars" title="Permalink to this heading">¶</a></h2>
+<p>Atmospheric rivers (ARs) are thin and long filamentary structures characterized by high integrated vapor transport cite{Payne_et_al:2020}. The AR event during February 07–11 2017 caused the problems with the Oroville Dam. Figure~ref{fig:ivt_2017_global} and ~ref{fig:iwv_2017_global} shows the distribution of the vertically integrated water vapor transport (IVT), the vertically integrated water vapor (IWV) at 12Z 08 February 2017. We can see that the development of the ARs in nudged EAM simulations agrees reasonably well with the ERA5 reanalysis, partly due to the good constrains on the large-scale circulation by nudging. See following animations for the development of the AR during February 07–11 2017 in the ERA5 reanalysis and the nudged EAM simulations</p>
+<ul class="simple">
+<li><p>[<a class="reference external" href="https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/post_processing/storm/TempestExtremes/figure/ARs/animate_ivt_201702.gif">Fig1</a>]</p></li>
+<li><p>[<a class="reference external" href="https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/post_processing/storm/TempestExtremes/figure/ARs/animate_iwv_201702.gif">Fig2</a>]</p></li>
+</ul>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../_images/Vert.png"><img alt="Alternative text" src="../_images/Vert.png" style="width: 1000px;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 8. Vertically integrated water vapor transport (IVT, kg~m$^{-1}$~s$^{-1}$) and  mean sea level pressure (contour, hPa)  at 12Z 08 February 2017 from ERA5 reanalysis (left panel), EAM simulations nudged towards wind fields from ERA5 reanalysis (i.e. NDGUV, middle panel) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (i.e. NDGUVTQ, right panel). The vectors are derived from the eastward and northward components of water vapor transport.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="../_images/water.png"><img alt="Alternative text" src="../_images/water.png" style="width: 1000px;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 9. Vertically integrated water vapor (shading, kg~m$^{-2}$), 850-hPa wind fields (vector, m~s$^{-1}$) and mean sea level pressure (contour, hPa) at 12Z 08 February 2017 from  from ERA5 reanalysis (left panel), EAM simulations nudged towards wind fields from ERA5 reanalysis (i.e. NDGUV, middle panel) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (i.e. NDGUVTQ, right panel). The contours in denote the sea level pressure (PSL, hPa).</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="DeepONet_Online.html" class="btn btn-neutral float-right" title="DeepONet based climate bias correction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Data.html" class="btn btn-neutral float-left" title="DATA for E3SM hybrid modelling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2022, MIT-BROWN-PNNL
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
