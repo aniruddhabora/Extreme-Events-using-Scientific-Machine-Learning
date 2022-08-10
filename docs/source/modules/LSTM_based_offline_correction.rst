@@ -4,7 +4,7 @@ Problem Setup
 -------------
 
 This work aims to train a neural network that, given as input the predictions of a free running coarse-
-scale simulation, denoted as CLIM in this project, :math:`$\left(U, V, Q, T\right)^{\text{CLIM}}$`, it will produce a modified time-series :math:`$\left(U, V, Q, T\right)^{\text{ML}}$` that will have the same
+scale simulation, denoted as CLIM in this project, :math:`\left(U, V, Q, T\right)^{\text{CLIM}}`, it will produce a modified time-series :math:`$\left(U, V, Q, T\right)^{\text{ML}}$` that will have the same
 statistics as a fine-scale reference simulation :math:`$\left(U, V, Q, T\right)^{\text{ERA5}}$`. For this
 project, reference data correspond to ERA5 reanalysis datasets while free running coarse-scale
 simulations are generated via the E3SM CLIM model. A diagram of this process is the figure below. The
