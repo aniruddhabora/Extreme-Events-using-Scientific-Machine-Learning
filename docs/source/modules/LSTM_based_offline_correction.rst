@@ -106,6 +106,8 @@ Code Setup
 Numerical Results
 -----------------
 
+1. Hurricane Sandy 
 
+             Hurricane Sandy was a tropical cyclone that affected the Caribbeans and the East Coast from 10/23/2012 to 10/02/2012. We train the model,                using 2012 ERA5, E3SM(NDGUVTQ) and CLIM data. The time-interval 10/23/2012-11/03/2012 is excluded from training. We then validate the model              by comparing its predictiongs with R-nudged data as input for the time-interval of the hurricane. The model can use ERA5 data as labels     [`here <https://www.dropbox.com/s/7631nnd6x5q7gc0/TC_Speed_Isopressure_ERA5.mp4?dl=0>`_] as well as E3SM(NDGUVTQ) data [`here <https://www.dropbox.com/s/93ieajcq0ggph45/TC_Speed_Isopressure_Nudged.mp4?dl=0>`_]. Obviously, using the more accurate ERA5 labels produces superior results. 
 
 
