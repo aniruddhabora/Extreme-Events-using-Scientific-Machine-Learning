@@ -127,17 +127,20 @@ require running additional nudged simulations, thus lowering the total cost of t
 
 Code Setup
 ----------
-           * Running file: To file you will use to run the code is Nonintrusive_Model.py. There are different handles you can include when calling this code which are described below.
+
+1. To create a test case, simply add the case you want to the file Model_Cases.py. The file contains instructions on what each parameter represents. Make sure to set the parameters of the case to the ones you want and give a nickname to the case. If you want to double check that the parameters where set correctly for your run, simply type python ./Nonintrusive_Model.py test_case data_info and it will display on the command line the details for the run. 
+
+2. The file used to run the code is Nonintrusive_Model.py. There are different handles you can include when calling this code which are described below:
            
-           * Creating a test case: To create a test case, simply add the case you want to the file Model_Cases.py. The file contains instructions on what each parameter represents. Make sure to set the parameters of the case to the ones you want and give a nickname to the case. If you want to double check that the parameters where set correctly for your run, simply type python ./Nonintrusive_Model.py test_case data_info and it will display on the command line the details for the run.  
+           * data_info: Running python ./Nonintrusive_Model.py test_case data_info, will display on the command line all the parameters set for the case test_case. This way, one can double-check that all parameters were set correctly.  
            
-           * Creating all necessary data files: Before training, the generation of appropriate data is required. To do this, type: python ./Nonintrusive_Model.py test_case data_prep -handle, where test_case is the name of the case you want to run. handle can be 'overlap' if you want the code to skip making files that already exist from previous runs, or 'clean' if you want the code to recreate all the files. 
+           * data_prep: Before training, the generation of appropriate data is required. To do this, type: python ./Nonintrusive_Model.py test_case data_prep -handle, where test_case is the name of the case you want to run. handle can be 'overlap' if you want the code to skip making files that already exist from previous runs, or 'clean' if you want the code to recreate all the files. 
            
-           * Training the model: To train the model, simply type: python ./Nonintrusive_Model.py test_case train_model -handle zlevel. Again, handle can be 'overlap' or 'clean'. Furthermore, zlevel denotes the sigma-level that you want to train on. This process saves both validation results (i.e. with R-nudged data as input) and testing results (i.e. with CLIM data as input). 
+           * train_model: To train the model, simply type: python ./Nonintrusive_Model.py test_case train_model -handle zlevel. Again, handle can be 'overlap' or 'clean'. Furthermore, zlevel denotes the sigma-level that you want to train on. This process saves both validation results (i.e. with R-nudged data as input) and testing results (i.e. with CLIM data as input). 
            
-           * Post-processing: To compute statistics from your results, simply type python ./Nonintrusive_Model.py test_case compute_stats -handle, where handle can be 'overlap' or 'clean'.
+           * compute_stats: To compute statistics from your results, simply type python ./Nonintrusive_Model.py test_case compute_stats -handle, where handle can be 'overlap' or 'clean'.
            
-           * Making a movie: To create a video from your datasets, simply type python ./Nonintrusive_Model.py test_case make_video. There are specific parameters that need to be set in Model_Cases.py for what field to plot and over what region. 
+           * make_video: To create a video from your datasets, simply type python ./Nonintrusive_Model.py test_case make_video. There are specific parameters that need to be set in Model_Cases.py for what field to plot and over what region. 
            
 
 
