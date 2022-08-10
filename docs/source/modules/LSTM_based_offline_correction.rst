@@ -37,11 +37,8 @@ that maps :math:`$X^{\text{ERA5}}$` to the coarse resolution.
 Model Architecture
 ------------------
 
-This subsection discusses how recurrent neural networks (RNN) are used for the data-informed
-mappings previously described. In particular, long short-term memory (LSTM) neural networks are
-employed. Of great interest is the ability of this model to generalize beyond the data seen during
-training. At first this is investigated in out-of-sample data from the training flow and later further tested
-on different flow setups. The architecture of the LSTM-based neural-network is shown in the figure
+This approach employs Long short-term memory (LSTM) neural networks. Of great interest is the ability of this model to generalize beyond the data seen during training. At first this is investigated in out-of-sample data from the training flow and later further tested
+on different on unseen data. The architecture of the LSTM-based neural-network is shown in the figure
 below. It consists of an input fully connected layer that compresses prognostic variables of a single level
 to a $600$-valued vector. This layer has a :math:`$\tanh$` activation function. The compressed vector
 is then passed as input to a long short-term memory (LSTM) neural network. The output of the neural network is then passed through an output fully connected neural network to produce the final data-informed corrected predictions. The output layer has a linear activation function.
@@ -64,13 +61,15 @@ Data Preparation
 When training with nudged data, a main reason for discrepancies during testing is due to different
 statistical behaviour of the nudged solution with respect to the free-running coarse data. This is a result
 of discrepancies in the energy spectrum of the nudged solution with respect to the coarse-scale
-solution. These energy spectra differences lead to different statistical behaviours of testing data
-:math:`$\left( U, V, Q, T \right)^{\text{CLIM}}$` and training data :math:`$\left( U, V, Q, T
-\right)^{\text{Nudged}}$`.
-Discrepancies in the training and testing input distributions will lead to the neural network behaving
-differently in the two schemes. These discrepancies cannot be reconciled by simply choosing an
+solution. These discrepancies cannot be reconciled by simply choosing an
 appropriate $\tau$ as algebraic nudging adds linear dissipation to the system, thus always changing the
-energy spectrum of the resulting flow.
+energy spectrum of the resulting flow. In fact, nudging can make the statistical properties of predictions worse than that of a free-running coarse simulation. This effect was observed and studied thorougly during beta-testing in a 2-layer quasi-geostrophic model. The results for these model are seen below.Similar behavior was observed on the E3SM dataset.
+
+.. figure:: images/Nudging_Choice.png
+  :width: 600
+  :align: center
+  :alt: Alternative text
+
 To remedy the energy spectra differences, a new method is developed and employed. The process is
 called "Reverse Spectral Nudging" with its purpose being to match the energy spectrum of the nudged
 solution to that of the coarse-scale solution to improve the training process. Hence, while traditional
@@ -99,6 +98,14 @@ running coarse simulation, meaning that the training and testing data come from 
 This property improves significantly the accuracy of the resulted ML scheme. The energy spectra of the
 R-nudged solution indeed coincide with the coarse-scale free running spectra. In addition, the R-nudged data still follow the reference data, allowing for a mapping between :math:`$\left( U,V,T,Q\right)^{\text{R-Nudge}}$` and :math:`$\left( U,V,T,Q \right)^{\text{ERA5}}$`. This process does not
 require running additional nudged simulations, thus lowering the total cost of the training scheme.
+
+Code Setup
+----------
+
+
+Numerical Results
+-----------------
+
 
 
 
