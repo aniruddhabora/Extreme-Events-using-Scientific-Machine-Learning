@@ -151,7 +151,7 @@ and it will display on the command line the details for the run.
            
                         python ./Nonintrusive_Model.py test_case train_model -handle zlevel
            
-           Again, handle can be 'overlap' or 'clean'. Furthermore, zlevel denotes the sigma-level that you want to train on. This process saves both validation results (i.e. with R-nudged data as input) and testing results (i.e. with CLIM data as input). 
+             Again, handle can be 'overlap' or 'clean'. Furthermore, zlevel denotes the sigma-level that you want to train on. This process saves both validation results (i.e. with R-nudged data as input) and testing results (i.e. with CLIM data as input). 
            
            * compute_stats: To compute statistics from your results, simply type 
            
