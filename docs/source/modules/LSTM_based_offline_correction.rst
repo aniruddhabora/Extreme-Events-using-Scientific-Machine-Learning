@@ -23,10 +23,10 @@ be determined first. Due to chaotic divergence, free running coarse-scale data w
 from their fine-scale conuterpart despite having the same flow parameters and initial conditions. As a
 result, it is not feasible for a neural network to learn a generalizable mapping directly between
 :math:`\left(U, V, Q, T\right)^{\text{CLIM}}` and :math:`\left(U, V, Q, T\right)^{\text{ERA5}}`. To
-that end, to produce coarse-scale simulations for training, a relaxation term $Q$ is added to the
+that end, to produce coarse-scale simulations for training, a relaxation term :math:`Q` is added to the
 evolution equations of the prognostic variables :math:`\left(U, V, Q, T\right)`. The term :math:`Q` is called nudging tendency
 and it corrects the coarse-scale solution based on the fine-scale reference solution. In this study, for a
-variable :math:`X`, the nudging tendency $Q$ is given by the algebraic term
+variable :math:`X`, the nudging tendency :math:`Q` is given by the algebraic term
 
 :math:`Q\left( X-X^{\text{ERA5}} \right) = -\frac{1}{\tau} \left( X-\mathcal{H} \left[X^{\text{ERA5}}\right] \right).`
 
@@ -71,9 +71,27 @@ solution.
 
 To remedy the energy spectra differences, a new method is developed and employed. The process is
 called "Reverse Spectral Nudging" with its purpose being to match the energy spectrum of the nudged
-solution to that of the coarse-scale solution to improve the training process. The resulting dataset can be seen in the figure below.
+solution to that of the coarse-scale solution to improve the training process. While traditional nudging schemes correct the coarse-scale solution with data from the reference solution, the proposed scheme further processes the nudged data by matching its energy spectrum to that of the
+corresponding free running coarse-scale flow. The corrected nudged data is termed as :math:`\left( U,
+V, Q, T \right)^{\text{R-Nudge}}` and defined, for a prognostic variable :math:`X`, as
+
+:math:`X^{\text{RS-nudge}}\left(x, y t; z=z_0\right) = \sum_{k,l} R_{k,l} \hat{X}_{k,l}^{\text{nudge}}(t;z=z_0) e^{i\left( k x +l y \right)},`
+
+where :math:`{X}_{k,l}^{\text{nudge}}(t)` are the spatial Fourier coefficients of :math:`X^{\text{nudge}}` and
+
+:math:`R_{k,l} = \sqrt{\frac{\mathcal{E}^{\text{coarse}}_{k,l}}{\mathcal{E}^{\text{nudge}}_{k,l}}}, \quad\text{and} \quad \mathcal{E}_{k,l} = \frac{1}{T}\int_0^T \hat{E}_{k,l}(t) \mathrm{d}t =\frac{1}{T} \int_0^T|\hat{X}_{k,l}(t)|^2 \mathrm{d}t.`
+
+The resulting dataset can be seen in the figure below.
 
 .. figure:: images/Rnudged_Energy.png
+  :width: 600
+  :align: center
+  :alt: Alternative text
+
+
+This approach yielded improved results in the 2-layer QG model that were able to generalize outside the training set. 
+
+.. figure:: images/Rnudged_QG_Results.png
   :width: 600
   :align: center
   :alt: Alternative text
