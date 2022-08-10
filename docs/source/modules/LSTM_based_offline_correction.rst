@@ -71,7 +71,7 @@ solution.
   
 Similar behavior was observed on the E3SM dataset.
   
-.. figure:: images/E3SM_Spectral_Errors.png
+.. figure:: images/E3SM_Spectral_errors.png
   :width: 600
   :align: center
   :alt: Alternative text
