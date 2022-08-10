@@ -87,9 +87,8 @@ where :math:`${X}_{k,l}^{\text{nudge}}(t)$` are the spatial Fourier coefficients
 
 
 A depiction of the values of these coefficients can be seen in the figure below.
-change this image to E3SM_Rcoeff.pdf
 
-.. figure:: images/E3SM_Rcoeff.pdf
+.. figure:: images/E3SM_Rcoeff.png
   :width: 600
   :align: center
   :alt: Alternative text
