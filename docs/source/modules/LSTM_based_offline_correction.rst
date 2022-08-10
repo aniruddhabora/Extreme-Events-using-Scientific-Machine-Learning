@@ -24,13 +24,13 @@ from their fine-scale conuterpart despite having the same flow parameters and in
 result, it is not feasible for a neural network to learn a generalizable mapping directly between
 :math:`\left(U, V, Q, T\right)^{\text{CLIM}}` and :math:`\left(U, V, Q, T\right)^{\text{ERA5}}`. To
 that end, to produce coarse-scale simulations for training, a relaxation term $Q$ is added to the
-evolution equations of the prognostic variables $(U, V, T, Q)$. The term $Q$ is called nudging tendency
+evolution equations of the prognostic variables :math:`\left(U, V, Q, T\right)`. The term :math:`Q` is called nudging tendency
 and it corrects the coarse-scale solution based on the fine-scale reference solution. In this study, for a
-variable $X$, the nudging tendency $Q$ is given by the algebraic term
+variable :math:`X`, the nudging tendency $Q$ is given by the algebraic term
 
 :math:`Q\left( X-X^{\text{ERA5}} \right) = -\frac{1}{\tau} \left( X-\mathcal{H} \left[X^{\text{ERA5}}\right] \right).`
 
-Parameter $\\tau$ is a relaxation timescale to be determined, and :math:`\mathcal{H}` is an operator
+Parameter :math:`\tau` is a relaxation timescale to be determined, and :math:`\mathcal{H}` is an operator
 that maps :math:`X^{\text{ERA5}}` to the coarse resolution.
 
 
