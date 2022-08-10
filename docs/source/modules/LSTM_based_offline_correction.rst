@@ -61,35 +61,45 @@ Hence, it is expected that RNNs can help predict the contribution of unresolved 
 Data Preparation
 ----------------
 
-LSTM neural networks incorporate (non-Markovian) memory effects into the reduced-order model. This ability stems from Takens embedding theorem~\cite{takens1981detecting}. The theorem states that given delayed embeddings of a limited number of state variables, one can still obtain the attractor of the full system for the observed variables. This approach is known to be capable of improving predictions of reduced-order models~\cite{ vlachas2018data, charalampopoulos2022machine, wan2021}. Hence, it is expected that RNNs can help predict the contribution of unresolved scales. 
+When training with nudged data, a main reason for discrepancies during testing is due to different
+statistical behaviour of the nudged solution with respect to the free-running coarse data. This is a result
+of discrepancies in the energy spectrum of the nudged solution with respect to the coarse-scale
+solution. These energy spectra differences lead to different statistical behaviours of testing data
+:math:`$\left( U, V, Q, T \right)^{\text{CLIM}}$` and training data :math:`$\left( U, V, Q, T
+\right)^{\text{Nudged}}$`.
+Discrepancies in the training and testing input distributions will lead to the neural network behaving
+differently in the two schemes. These discrepancies cannot be reconciled by simply choosing an
+appropriate $\tau$ as algebraic nudging adds linear dissipation to the system, thus always changing the
+energy spectrum of the resulting flow.
+To remedy the energy spectra differences, a new method is developed and employed. The process is
+called "Reverse Spectral Nudging" with its purpose being to match the energy spectrum of the nudged
+solution to that of the coarse-scale solution to improve the training process. Hence, while traditional
+nudging schemes correct the coarse-scale solution with data from the reference solution, the proposed
+scheme further processes the nudged data by matching its energy spectrum to that of the
+corresponding free running coarse-scale flow. The corrected nudged data is termed as :math:`$\left( U,
+V, Q, T \right)^{\text{R-Nudge}}$` and defined, for a prognostic variable $X$, as
 
-When training with nudged data, a main reason for discrepancies during testing is due to different statistical behaviour of the nudged solution with respect to the free-running coarse data. This is a result of discrepancies in the energy spectrum of the nudged solution with respect to the coarse-scale solution. These energy spectra differences lead to different statistical behaviours of testing data $\left( U, V, Q, T \right)^{\text{CLIM}}$ and training data $\left( U, V, Q, T \right)^{\text{Nudged}}$. 
-Discrepancies in the training and testing input distributions will lead to the neural network behaving differently in the two schemes~\cite{shalev2014understanding}. These discrepancies cannot be reconciled by simply choosing an appropriate $\tau$ as algebraic nudging adds linear dissipation to the system, thus always changing the energy spectrum of the resulting flow. 
-To remedy the energy spectra differences, a new method is developed and employed. The process is called `Reverse Spectral Nudging' with its purpose being to match the energy spectrum of the nudged solution to that of the coarse-scale solution to improve the training process. Hence, while traditional nudging schemes correct the coarse-scale solution with data from the reference solution, the proposed scheme further processes the nudged data by matching its energy spectrum to that of the corresponding free running coarse-scale flow. The corrected nudged data is termed as $\left( U,V,T,Q \right)^{\text{RS-nudge}}$ and defined, for a prognostic variable $X$, as
+:math:`$X^{\text{RS-nudge}}\left(x, y t; z=z_0\right) = \sum_{k,l} R_{k,l} \hat{X}_{k,l}^{\text{nudge}}(t;z=z_0) e^{i\left( k x +l y \right)},$`
 
-.. math::
-    \begin{gather}\label{eq:R_nudge}
-    \begin{split}
-        X^{\text{RS-nudge}}\left(x, y t; z=z_0\right) = \sum_{k,l} R_{k,l} \hat{X}_{k,l}^{\text{nudge}}(t;z=z_0) e^{i\left( k x +l y \right)}, ,
-    \end{split}
-    \end{gather}
-    
-where ${X}_{k,l}^{\text{nudge}}(t)$ are the spatial Fourier coefficients of $X^{\text{nudge}}$ and   
+where :math:`${X}_{k,l}^{\text{nudge}}(t)$` are the spatial Fourier coefficients of :math:`$X^{\text{nudge}}$` and
 
-.. math::
-    \begin{gather}\label{eq:Rcoeff}
-    \begin{split}
-        R_{k,l} = \sqrt{\frac{\mathcal{E}^{\text{CLIM}}_{k,l}}{\mathcal{E}^{\text{nudge}}_{k,l}}}, \quad \text{and} \quad
-        \mathcal{E}_{k,l} = \frac{1}{T} \int_0^T \hat{E}_{k,l}(t) \mathrm{d}t=\frac{1}{T} \int_0^T |\hat{X}_{k,l}(t)|^2 \mathrm{d}t.
-    \end{split}
-    \end{gather}
+:math:`$R_{k,l} = \sqrt{\frac{\mathcal{E}^{\text{CLIM}}_{k,l}}{\mathcal{E}^{\text{nudge}}_{k,l}}}, \quad\text{and} \quad \mathcal{E}_{k,l} = \frac{1}{T}\int_0^T \hat{E}_{k,l}(t) \mathrm{d}t =\frac{1}{T} \int_0^T|\hat{X}_{k,l}(t)|^2 \mathrm{d}t.$`
 
-A depiction of the values of these coefficients can be seen in figure~\cref{fig:Rcoeffs}.
 
-.. figure:: images/Rcoef.png
+A depiction of the values of these coefficients can be seen in the figure below.
+change this image to E3SM_Rcoeff.pdf
+
+.. figure:: images/E3SM_Rcoeff.pdf
   :width: 600
   :align: center
   :alt: Alternative text
-  :math:`R`-coefficients for each one of the prognostic variables. Values are shown for the surface layer
 
-An important property of this scheme is that the new data have exactly the energy spectrum of the free running coarse simulation, meaning that the training and testing data come from the same distributions. This property improves significantly the accuracy of the resulted ML scheme. The energy spectra of the R-nudged solution indeed coincide with the coarse-scale free running spectra. In addition, the R-nudged data still follow the reference data, allowing for a mapping between :math:`$\left( U,V,T,Q\right)^{\text{R-Nudge}}$` and :math:`$\left( U,V,T,Q \right)^{\text{ERA5}}$`. This process does not require running additional nudged simulations, thus lowering the total cost of the training scheme.
+
+An important property of this scheme is that the new data have exactly the energy spectrum of the free
+running coarse simulation, meaning that the training and testing data come from the same distributions.
+This property improves significantly the accuracy of the resulted ML scheme. The energy spectra of the
+R-nudged solution indeed coincide with the coarse-scale free running spectra. In addition, the R-nudged data still follow the reference data, allowing for a mapping between :math:`$\left( U,V,T,Q\right)^{\text{R-Nudge}}$` and :math:`$\left( U,V,T,Q \right)^{\text{ERA5}}$`. This process does not
+require running additional nudged simulations, thus lowering the total cost of the training scheme.
+
+
+
