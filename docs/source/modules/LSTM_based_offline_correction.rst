@@ -58,12 +58,11 @@ Hence, it is expected that RNNs can help predict the contribution of unresolved 
 Data Preparation
 ----------------
 
-When training with nudged data, a main reason for discrepancies during testing is due to different
-statistical behaviour of the nudged solution with respect to the free-running coarse data. This is a result
+1. Lessons from beta-testing
+
+This approach was first applied to a simpler, 2-layer quasi-geostrophic model. While using nudged data, one can hope that by using small :math:`\tau` they can get nudged dataset with the statistical properties of the free-running coarse-scale simulation but much lower phases errors with respect to the reference solution. However, as can be seen from the figure below, this is not possible. In fact, nudging can make the statistical properties of predictions worse than that of a free-running coarse simulation. Similar behavior was observed on the E3SM dataset. Furthermore, even by hand-picking a value of :math:`\tau` so to match the statistics of the coarse simulation for one feature, the statistics will diverge for the others. This is a result
 of discrepancies in the energy spectrum of the nudged solution with respect to the coarse-scale
-solution. These discrepancies cannot be reconciled by simply choosing an
-appropriate $\tau$ as algebraic nudging adds linear dissipation to the system, thus always changing the
-energy spectrum of the resulting flow. In fact, nudging can make the statistical properties of predictions worse than that of a free-running coarse simulation. This effect was observed and studied thorougly during beta-testing in a 2-layer quasi-geostrophic model. The results for these model are seen below.Similar behavior was observed on the E3SM dataset.
+solution.
 
 .. figure:: images/Nudging_Choice.png
   :width: 600
@@ -72,8 +71,17 @@ energy spectrum of the resulting flow. In fact, nudging can make the statistical
 
 To remedy the energy spectra differences, a new method is developed and employed. The process is
 called "Reverse Spectral Nudging" with its purpose being to match the energy spectrum of the nudged
-solution to that of the coarse-scale solution to improve the training process. Hence, while traditional
-nudging schemes correct the coarse-scale solution with data from the reference solution, the proposed
+solution to that of the coarse-scale solution to improve the training process. The resulting dataset can be seen in the figure below.
+
+.. figure:: images/Rnudged_Energy.png
+  :width: 600
+  :align: center
+  :alt: Alternative text
+
+
+2, Application to climate datasets.
+
+While traditional nudging schemes correct the coarse-scale solution with data from the reference solution, the proposed
 scheme further processes the nudged data by matching its energy spectrum to that of the
 corresponding free running coarse-scale flow. The corrected nudged data is termed as :math:`\left( U,
 V, Q, T \right)^{\text{R-Nudge}}` and defined, for a prognostic variable :math:`X`, as
