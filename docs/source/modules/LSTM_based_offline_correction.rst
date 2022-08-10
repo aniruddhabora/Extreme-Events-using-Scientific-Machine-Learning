@@ -60,11 +60,18 @@ Data Preparation
 
 1. Lessons from beta-testing
 
-This approach was first applied to a simpler, 2-layer quasi-geostrophic model. While using nudged data, one can hope that by using small :math:`\tau` they can get nudged dataset with the statistical properties of the free-running coarse-scale simulation but much lower phases errors with respect to the reference solution. However, as can be seen from the figure below, this is not possible. In fact, nudging can make the statistical properties of predictions worse than that of a free-running coarse simulation. Similar behavior was observed on the E3SM dataset. Furthermore, even by hand-picking a value of :math:`\tau` so to match the statistics of the coarse simulation for one feature, the statistics will diverge for the others. This is a result
+This approach was first applied to a simpler, 2-layer quasi-geostrophic model. While using nudged data, one can hope that by using small :math:`\tau` they can get nudged dataset with the statistical properties of the free-running coarse-scale simulation but much lower phases errors with respect to the reference solution. However, as can be seen from the figure below, this is not possible. In fact, nudging can make the statistical properties of predictions worse than that of a free-running coarse simulation. Furthermore, even by hand-picking a value of :math:`\tau` so to match the statistics of the coarse simulation for one feature, the statistics will diverge for the others. This is a result
 of discrepancies in the energy spectrum of the nudged solution with respect to the coarse-scale
 solution.
 
 .. figure:: images/Nudging_Choice.png
+  :width: 600
+  :align: center
+  :alt: Alternative text
+  
+Similar behavior was observed on the E3SM dataset.
+  
+.. figure:: images/E3SM_Spectral_Errors.png
   :width: 600
   :align: center
   :alt: Alternative text
