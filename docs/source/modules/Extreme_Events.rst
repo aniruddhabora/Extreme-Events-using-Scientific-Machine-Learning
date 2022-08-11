@@ -72,14 +72,14 @@ Atmospheric rivers (ARs) are thin and long filamentary structures characterized 
   :align: center
   :alt: Alternative text
 
-  Figure 8. Vertically integrated water vapor transport (IVT, kg~m$^{-1}$~s$^{-1}$) and  mean sea level pressure (contour, hPa)  at 12Z 08 February 2017 from ERA5 reanalysis (left panel), EAM simulations nudged towards wind fields from ERA5 reanalysis (i.e. NDGUV, middle panel) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (i.e. NDGUVTQ, right panel). The vectors are derived from the eastward and northward components of water vapor transport.
+  Figure 8. Vertically integrated water vapor transport (IVT, kg~m:math:`^{-1}~s^{-1}`) and  mean sea level pressure (contour, hPa)  at 12Z 08 February 2017 from ERA5 reanalysis (left panel), EAM simulations nudged towards wind fields from ERA5 reanalysis (i.e. NDGUV, middle panel) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (i.e. NDGUVTQ, right panel). The vectors are derived from the eastward and northward components of water vapor transport.
 
 .. figure:: Data_figs/water.png
   :width: 1000
   :align: center
   :alt: Alternative text
 
-  Figure 9. Vertically integrated water vapor (shading, kg~m$^{-2}$), 850-hPa wind fields (vector, m~s$^{-1}$) and mean sea level pressure (contour, hPa) at 12Z 08 February 2017 from  from ERA5 reanalysis (left panel), EAM simulations nudged towards wind fields from ERA5 reanalysis (i.e. NDGUV, middle panel) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (i.e. NDGUVTQ, right panel). The contours in denote the sea level pressure (PSL, hPa).
+  Figure 9. Vertically integrated water vapor (shading, kg~m:math:`^{-2}`), 850-hPa wind fields (vector, m~s:math:`^{-1}`) and mean sea level pressure (contour, hPa) at 12Z 08 February 2017 from  from ERA5 reanalysis (left panel), EAM simulations nudged towards wind fields from ERA5 reanalysis (i.e. NDGUV, middle panel) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (i.e. NDGUVTQ, right panel). The contours in denote the sea level pressure (PSL, hPa).
 
 
 
