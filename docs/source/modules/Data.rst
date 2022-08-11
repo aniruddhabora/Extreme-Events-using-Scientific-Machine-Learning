@@ -23,7 +23,7 @@ The EAM model code for the development of ML model can be found [`here <https://
 Nudging Approach 
 ----------------
 
-The nudging approach is employed to estimate the biases in EAM-LR model state including temperature (T), humidity (Q), zonal wind (U) and meridional wind (V) for the ML training. Here, nudging constrains the model solution of $X_m$ at every grid point toward the reference state of $X_r$ by adding a linear relaxation term to the EAM model equation:   
+The nudging approach is employed to estimate the biases in EAM-LR model state including temperature (T), humidity (Q), zonal wind (U) and meridional wind (V) for the ML training. Here, nudging constrains the model solution of :math:`\boldsymbol{X}_{m}` at every grid point toward the reference state of :math:`\boldsymbol{X}_{\boldsymbol{r}}` by adding a linear relaxation term to the EAM model equation:   
 
 .. math::
     \begin{eqnarray} \label{eqn:eam_nudging}
@@ -44,7 +44,7 @@ Pink boxes in Figure 1 illustrate where the nudging-related calculations occur i
 
 
 .. figure:: Data_figs/e3sm_nudging_flow.png
-  :width: 800
+  :width: 900
   :align: center
   :alt: Alternative text
 
@@ -81,7 +81,7 @@ Three groups of training data are generated in phase 1 (Table~\ref{tabtrainning_
 
 
 
-All EAM simulations were conducted for 11-years from 2007 to 2017. The first year is for model spin-up and the remaining 10-years are used to construct the input data for ML training. Table~\ref{tab:varlist} presents the list of the input variables for ML training. The  3-D model state (U, V, T, Q)  variables are the instantaneous model output, while the nudging tendencies are averaged values during a 3-hr period for each time sample. The data are available at this [`link <https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/SE_PG2/>`_]
+All EAM simulations were conducted for 11-years from 2007 to 2017. The first year is for model spin-up and the remaining 10-years are used to construct the input data for ML training. Table 2 presents the list of the input variables for ML training. The  3-D model state (U, V, T, Q)  variables are the instantaneous model output, while the nudging tendencies are averaged values during a 3-hr period for each time sample. The data are available at this [`link <https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/SE_PG2/>`_]
 
 .. figure:: Data_figs/table_2.png
   :width: 600
