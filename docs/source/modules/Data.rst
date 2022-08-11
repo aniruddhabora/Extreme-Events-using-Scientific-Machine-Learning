@@ -44,7 +44,7 @@ Pink boxes in Figure 1 illustrate where the nudging-related calculations occur i
 
 
 .. figure:: Data_figs/e3sm_nudging_flow.png
-  :width: 400
+  :width: 800
   :align: center
   :alt: Alternative text
 
@@ -63,13 +63,13 @@ Figure~\ref{fig:bias_vs_ndg_tend}a shows the distribution of monthly mean zonal 
   :align: center
   :alt: Alternative text
   
-  Figure 2 (a) monthly mean zonally averaged temperature differences (ΔT, unit: K) in January 2010 between ERA5 and EAM's free-running simulation (CLIM in Table ??), (b-c) monthly mean nudging tendencies of temperature (T tend, unit K s−1) from the simulation by nudging EAM towards ERA5 reanalysis. The wind and temperature fields were nudged in the simulation (NDG UVT tau6 in Table ??) for panel (b), while the wind, temperature and humidity were nudged in the simulation (NDG UVTQ tau24 in Table ??) for panel (c). The y-axis of each panel shows the approximated pressure for the model levels in E.
+  Figure 2 (a) monthly mean zonally averaged temperature differences (ΔT, unit: K) in January 2010 between ERA5 and EAM's free-running simulation (CLIM in Table 1), (b-c) monthly mean nudging tendencies of temperature (T tend, unit K s−1) from the simulation by nudging EAM towards ERA5 reanalysis. The wind and temperature fields were nudged in the simulation (NDG UVT tau6 in Table ??) for panel (b), while the wind, temperature and humidity were nudged in the simulation (NDG UVTQ tau24 in Table ??) for panel (c). The y-axis of each panel shows the approximated pressure for the model levels in E.
 
 Three groups of training data are generated in phase 1 (Table~\ref{tabtrainning_exp}). The first group consists of the reference solution for U, V, T, Q that are derived from ERA5 reanalysis. The data are interpolated to the same grid and vertical levels for E3SM. The second group is a free-running baseline simulation referred to as CLIM. The before-radiation values of U, V, T, Q were archived to represent the baseline solution from the EAM-LR. The third group of simulations was nudged toward ERA5 reanalysis to derive the corrective tendencies of U, V, T, Q for ML training. The three pairs of  simulation are conducted to construct an ensemble of training data sets by applying nudging:
 
-- to the horizontal winds with :math:`\tau` = 6  (labeled "NDG\_UV")
-- to both winds and temperature  with :math:`\tau` = 6 (labeled "NDG\_UVT")
-- to winds, temperature, and humidity :math:`\tau` = 6 (labeled "NDG\_UVTQ") 
+- to the horizontal winds with :math:`tau` = 6  (labeled "NDG\_UV")
+- to both winds and temperature  with :math:`tau` = 6 (labeled "NDG\_UVT")
+- to winds, temperature, and humidity :math:`tau` = 6 (labeled "NDG\_UVTQ") 
 
 
 .. figure:: Data_figs/table_1.png
