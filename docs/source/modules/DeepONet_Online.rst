@@ -18,6 +18,26 @@ The overarching goal of this study is to train a DeepONet aided neural operator 
 
 To train the DeepONet based neural operator, we generated the data by solving the two layer QG system for a very long  time interval.
 
+
+Results for beta model
+----------------------
+
+The figure below shows the prediction of the pdfs of streamfunctions :math:`\psi_1` and :math:`\psi_2`, and the amplitude of wavenumbers :math:`(1,0), (1,1)` of the barotropic streamfunction for :math:`\beta = 2` and :math:`r = 0.2`, while training took place for :math:`\beta = 2` and :math:`r = 0.1`.
+
+
+The objective of this task is to correct the statistics in space and time by utilizing the the low resolution data for a prescribed measurable and forecast in time. 
+
+
+.. figure:: images/QG_train.png
+  :width: 600
+  :align: center
+  :alt: Alternative text
+
+.. figure:: images/QG_test.png
+  :width: 600
+  :align: center
+  :alt: Alternative text
+
 Problem Setup for E3SM
 ----------------------
 
