@@ -38,6 +38,12 @@ The objective of this task is to correct the statistics in space and time by uti
   :align: center
   :alt: Alternative text
 
+.. figure:: images/QG_zonal.png
+  :width: 600
+  :align: center
+  :alt: Alternative text
+
+
 Problem Setup for E3SM
 ----------------------
 
