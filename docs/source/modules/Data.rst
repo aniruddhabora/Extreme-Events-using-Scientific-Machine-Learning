@@ -81,7 +81,8 @@ Three groups of training data are generated in phase 1 (Table~\ref{tabtrainning_
 
 
 
-All EAM simulations were conducted for 11-years from 2007 to 2017. The first year is for model spin-up and the remaining 10-years are used to construct the input data for ML training. Table~\ref{tab:varlist} presents the list of the input variables for ML training. The  3-D model state (U, V, T, Q)  variables are the instantaneous model output, while the nudging tendencies are averaged values during a 3-hr period for each time sample. The data are available at \url{https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/SE_PG2/}. 
+All EAM simulations were conducted for 11-years from 2007 to 2017. The first year is for model spin-up and the remaining 10-years are used to construct the input data for ML training. Table~\ref{tab:varlist} presents the list of the input variables for ML training. The  3-D model state (U, V, T, Q)  variables are the instantaneous model output, while the nudging tendencies are averaged values during a 3-hr period for each time sample. The data are available at this [`link <https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/SE_PG2/>`_]
+\url{https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/SE_PG2/}. 
 
 .. figure:: Data_figs/table_2.png
   :width: 600
