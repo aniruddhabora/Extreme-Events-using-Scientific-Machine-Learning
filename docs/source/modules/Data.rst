@@ -43,8 +43,8 @@ where :math:`\boldsymbol{X}_{m}` and :math:`\boldsymbol{X}_{\boldsymbol{r}}`  re
 Pink boxes in Figure 1 illustrate where the nudging-related calculations occur in the default EAM. In a nudged simulation,  after the resolved dynamics (see blue box in figure) has been calculated,  a nudging tendency term in the form of Eq 2 is calculated for each nudged variable with  :math:`\boldsymbol{X}_{m}` being the value of $X$ after the dynamical core. After the entire physics parameterization suite has been calculated, the sum of the parameterization-induced tendencies and the nudging tendencies are passed to the physics-dynamics coupling interface.
 
 
-.. figure:: Data_figs/flow.png
-  :width: 600
+.. figure:: Data_figs/e3sm_nudging_flow.png
+  :width: 400
   :align: center
   :alt: Alternative text
 
@@ -59,7 +59,7 @@ In Phase 1, the ML training data are constructed following a "nudge-to-observati
 Figure~\ref{fig:bias_vs_ndg_tend}a shows the distribution of monthly mean zonal averaged temperature differences between the EAM free-running simulations (i.e., CLIM) and ERA5 reanalysis (i.e. reference) in January 2010. Most model layers in the Tropics and mid-latitudes exhibit a cold temperature bias. In these regions, the positive temperature nudging tendencies in the nudged simulation act to correct the cold biases (Fig.~\ref{fig:bias_vs_ndg_tend}b).  Generally the time mean nudging tendency removes the systematic "background error" found in the EAM free-running simulations. However, the nudging may not always help to reduce the systematic errors. For example, nudging both wind and temperature can produce a positive tendency of temperature in the northern hemisphere high-latitude (Fig.~\ref{fig:bias_vs_ndg_tend}b), where the free-running simulations exhibit warm temperature biases, as shown in Fig.~\ref{fig:bias_vs_ndg_tend}a, suggesting a role of positive feedback that amplifies the upper level temperature biases in the free-running simulations. Using a nudging strategy that constrains humidity in addition to wind and temperature produces rather different nudging tendencies (Fig.~\ref{fig:bias_vs_ndg_tend}c), revealing the complex relationships between the nudging corrections and the state variables through the nonlinear governing equation (Eq.~\ref{eqn:eam_nudging}). Therefore, we design different nudging strategies to provide an ensemble of nudged simulations with different nudging tendencies and state variables for the ML training.
 
 .. figure:: Data_figs/mean_bias.png
-  :width: 700
+  :width: 800
   :align: center
   :alt: Alternative text
   
@@ -88,6 +88,6 @@ All EAM simulations were conducted for 11-years from 2007 to 2017. The first yea
   :align: center
   :alt: Alternative text
 
-  Table2 Description of notation. Notes: the (x, y, z, t) is corresponding to the (latitude, logitude, levels, time) dimension in the EAM model output. Each notation contains the four state variables (i.e. $U$, $V$, $T$, $Q$) that are interested in this projec
+  Table2 Description of notation. Notes: the (x, y, z, t) is corresponding to the (latitude, logitude, levels, time) dimension in the EAM model output. Each notation contains the four state variables (i.e. U, V, T, Q) that are interested in this projec
 
 
