@@ -39,7 +39,7 @@ The objective of this task is to correct the statistics in space and time by uti
   :alt: Alternative text
 
 .. figure:: images/QG_zonal.png
-  :width: 600
+  :width: 800
   :align: center
   :alt: Alternative text
 
