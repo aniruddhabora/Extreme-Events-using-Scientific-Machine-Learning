@@ -11,6 +11,7 @@ Beta Model
 ----------
 
 The model under investigated here is the two-layer quasigeostrophic flow. It is governed by the dimensionless evolution equation
+
 .. math::
     \frac{\partial q_j}{\partial t} +\bv_j \cdot \bnabla q_j + \left( \beta +k_d^2 U_j \right) \frac{\partial \psi_j}{\partial x} = -\delta_{2,j} r \Delta \psi_j -\nu \Delta^s q_j,
 
