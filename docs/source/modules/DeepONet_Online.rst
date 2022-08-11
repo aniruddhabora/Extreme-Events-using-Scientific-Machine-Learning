@@ -10,6 +10,17 @@ Consider an operator :math:`\mathcal{G}`, that maps from the input function :mat
 Beta Model
 ----------
 
+The model under investigated here is the two-layer quasigeostrophic flow. It is governed by the dimensionless evolution equation
+.. math::
+    \frac{\partial q_j}{\partial t} +\bv_j \cdot \bnabla q_j + \left( \beta +k_d^2 U_j \right) \frac{\partial \psi_j}{\partial x} = -\delta_{2,j} r \Delta \psi_j -\nu \Delta^s q_j,
+
+where :math:`j = 1, 2` corresponds to the upper and lower layer respectively and the flow is defined in the horizontal domain :math:`(x,y) \in [0,2\pi]^2`. Doubly periodic boundary conditions are assumed. A mean zonal flow of intensity :math:`U_1 = U` and :math:`U_2 = -U` is imposed on each layer respectively. The two layers are assumed to have the same width, :math:`k_d` denotes the deformation radius, :math:`r` the bottom-drag coefficient and :math:`\beta` is the beta-plane approximation parameter. The potential vorticity (PV) :math:`q_j` and corresponding streamfunction :math:`\psi_j` are related via the inversion formulae
+
+.. math::
+	q_j = \Delta \psi_j +\frac{k_d^2}{2} \left( \psi_{3-j} -\psi_j \right), \quad j = 1, 2.
+
+
+	
 The overarching goal of this study is to train a DeepONet aided neural operator to approximate a map from the :math:`\psi(\bar{x},\bar{y},t)` to :math:`\Psi(x,y,t)`, where :math:`\psi` and :math:`\Psi`   represent low and high resolution Quasi-Geostrophic (QG) flow fields in space. Therefore, our aim is to formulate a DeepONet \cite{lu2021learning} architecture to learn the operator mapping :math:`\mathcal{G}` from the functional space :math:`\psi` to the function space :math:`\Psi`, which is expressed as
 
 .. math::
