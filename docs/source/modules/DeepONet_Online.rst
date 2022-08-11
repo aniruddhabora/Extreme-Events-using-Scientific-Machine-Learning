@@ -124,7 +124,9 @@ For the implementation and code click [`here <https://github.com/raj-brown/darpa
 Results
 -------
 
-For the results of the DeepONet click [`here <https://drive.google.com/drive/folders/1rmrz2I5v8Mi5MB3nR90Ny-FyzvdVzx7r?usp=sharing>`_]
+For the results of the DeepONet click [`here <https://drive.google.com/drive/folders/1rmrz2I5v8Mi5MB3nR90Ny-FyzvdVzx7r?usp=sharing>`_]. This link shows the simulation of the hurricane Sandy in 2012. The results show that the DeepONet can learn the corrective tendency very well and can reproduce the hurrican Sandy.
+
+In this [`link <https://drive.google.com/drive/folders/1POGC_GHiZbbVZr2qUorqqn9YIclDyvQm?usp=sharing>`_] you can find the simulation of the nudging tendedncy and its correlation with the nudging tendency used in E3SM.
 
 
 
