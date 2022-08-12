@@ -78,7 +78,7 @@ The objective of this task is to correct the statistics in space and time by uti
 
 
 .. figure:: images/lstm_1.png
-  :width: 400
+  :width: 300
   :align: center
   :alt: Alternative text
   
