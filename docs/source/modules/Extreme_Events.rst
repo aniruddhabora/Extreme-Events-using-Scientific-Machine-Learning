@@ -80,7 +80,7 @@ and  [`animation 2 <https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_da
   :alt: Alternative text
 
 
-  Figure 6. Vertically integrated water vapor transport (IVT, kg m s:math:`^{-2}`) and  mean sea level pressure (contour, hPa)  at 12Z 08 February 2017 from ERA5 reanalysis (left panel), EAM simulations nudged towards wind fields from ERA5 reanalysis (NDGUV, middle panel), and EAM simulations nudged towards wind, temperature, and humidity fields from ERA5 reanalysis (NDGUVTQ, right panel). The vectors are derived from the eastward and northward components of water vapor transport.
+  Figure 6. Vertically integrated water vapor transport (IVT, kg m s :math:`^{-2}`) and  mean sea level pressure (contour, hPa)  at 12Z 08 February 2017 from ERA5 reanalysis (left panel), EAM simulations nudged towards wind fields from ERA5 reanalysis (NDGUV, middle panel), and EAM simulations nudged towards wind, temperature, and humidity fields from ERA5 reanalysis (NDGUVTQ, right panel). The vectors are derived from the eastward and northward components of water vapor transport.
 
 
 .. figure:: Data_figs/water.png
@@ -88,7 +88,7 @@ and  [`animation 2 <https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_da
   :align: center
   :alt: Alternative text
 
-  Figure 7. Vertically integrated water vapor (shading, kg m s:math:`^{-2}`), 850-hPa wind fields (vector, m/s) and mean sea level pressure (contour, hPa) at 12Z 08 February 2017 from from ERA5 reanalysis (left panel), EAM simulations nudged towards wind fields from ERA5 reanalysis (NDGUV, middle panel), and EAM simulations nudged towards wind, temperature, and humidity fields from ERA5 reanalysis (NDGUVTQ, right panel). The contours denote the sea level pressure (PSL) in units of hPa.
+  Figure 7. Vertically integrated water vapor (shading, kg m s :math:`^{-2}`), 850-hPa wind fields (vector, m/s) and mean sea level pressure (contour, hPa) at 12Z 08 February 2017 from from ERA5 reanalysis (left panel), EAM simulations nudged towards wind fields from ERA5 reanalysis (NDGUV, middle panel), and EAM simulations nudged towards wind, temperature, and humidity fields from ERA5 reanalysis (NDGUVTQ, right panel). The contours denote the sea level pressure (PSL) in units of hPa.
 
 
 
