@@ -48,7 +48,7 @@ The extratropical cyclone (ETC) is defined as a cyclonic structure with no disti
 
   Figure 4. Track density maps for extratropical cyclones (ETCs) tracked in ERA5 reanalysis (top right panel), EAM free-running (i.e CLIM, top left panel),  EAM simulations nudged towards wind fields from ERA5 reanalysis (i.e. NDGUV, bottom left panel) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (i.e. NDGUVTQ, bottom right panel)  during the period of 2007--2017. Units are number of 6-hourly TCs occurrences per :math:`5^{o} \times 5^{o}` grid box.
 
-The ETC induced snowstorms during 22-24 January 2016 caused heavy snowfall in Northeast U.S.  Figure~\ref{fig:etc_2016} shows the horizontal distribution of 850-hPa wind (m/s, vector) and mean sea level pressure (hPa, shading in first row) at 12Z, 23 January 2016. We can see that the horizontal distribution of ETC-related fields are captured reasonably well in the nudged EAM simulations. See [`animation <https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/post_processing/storm/TempestExtremes/figure/ETCS/case/animate_etc_trk_2016.gif>`_] for the development of the ETC from 0000 UTC 21 to 1800 UTC 24 January.
+The ETC induced snowstorms during 22-24 January 2016 caused heavy snowfall in Northeast U.S.  Figure 5 shows the horizontal distribution of 850-hPa wind (m/s, vector) and mean sea level pressure (hPa, shading in first row) at 12Z, 23 January 2016. We can see that the horizontal distribution of ETC-related fields are captured reasonably well in the nudged EAM simulations. See [`animation <https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/post_processing/storm/TempestExtremes/figure/ETCS/case/animate_etc_trk_2016.gif>`_] for the development of the ETC from 0000 UTC 21 to 1800 UTC 24 January.
 
 
 .. figure:: Data_figs/Hoz_cal_1.png
@@ -70,14 +70,14 @@ and  [`animation 2 <https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_da
   :align: center
   :alt: Alternative text
 
-  Figure 6. Vertically integrated water vapor transport (IVT, kg~m:math:`^{-1}~s^{-1}`) and  mean sea level pressure (contour, hPa)  at 12Z 08 February 2017 from ERA5 reanalysis (left panel), EAM simulations nudged towards wind fields from ERA5 reanalysis (i.e. NDGUV, middle panel) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (i.e. NDGUVTQ, right panel). The vectors are derived from the eastward and northward components of water vapor transport.
+  Figure 6. Vertically integrated water vapor transport (IVT, kg m/:math:`^2`) and  mean sea level pressure (contour, hPa)  at 12Z 08 February 2017 from ERA5 reanalysis (left panel), EAM simulations nudged towards wind fields from ERA5 reanalysis (i.e. NDGUV, middle panel) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (i.e. NDGUVTQ, right panel). The vectors are derived from the eastward and northward components of water vapor transport.
 
 .. figure:: Data_figs/water.png
   :width: 1000
   :align: center
   :alt: Alternative text
 
-  Figure 7. Vertically integrated water vapor (shading, kg~m:math:`^{-2}`), 850-hPa wind fields (vector, m~s:math:`^{-1}`) and mean sea level pressure (contour, hPa) at 12Z 08 February 2017 from  from ERA5 reanalysis (left panel), EAM simulations nudged towards wind fields from ERA5 reanalysis (i.e. NDGUV, middle panel) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (i.e. NDGUVTQ, right panel). The contours in denote the sea level pressure (PSL, hPa).
+  Figure 7. Vertically integrated water vapor (shading, kg m/:math:`^2`), 850-hPa wind fields (vector, m/s) and mean sea level pressure (contour, hPa) at 12Z 08 February 2017 from  from ERA5 reanalysis (left panel), EAM simulations nudged towards wind fields from ERA5 reanalysis (i.e. NDGUV, middle panel) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (i.e. NDGUVTQ, right panel). The contours in denote the sea level pressure (PSL, hPa).
 
 
 
