@@ -37,6 +37,11 @@ Motivated by the above equation, we construct a novel DeepONet architecture by p
 
 2. The second step is to use the high resolution output approximated by DeepONet and incorporate the memory of system by using a Long short-term memory (LSTM) network, which is approximating  :math:`\zeta(t)` using a sequence-to-sequence mapping.  However, the solution of QG system lies in a high dimensional space  :math:`(\mathbb{R}^{24\times24})` space, which is also the dimension of the feature space for training and testing of LSTM, resulting in a computationally taxing process for the training of LSTM. To circumvent this issue instead of vanilla LSTM, we use a 2D Convolutional LSTM, which replaces the binary operation in vanilla LSTM with convolution. 
 
+.. figure:: images/DCL.png
+  :width: 600
+  :align: center
+  :alt: Alternative text
+
 
 Results for beta model
 ----------------------
