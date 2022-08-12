@@ -44,7 +44,7 @@ Pink boxes in Figure 1 illustrate where the nudging-related calculations occur i
 
 
 .. figure:: Data_figs/e3sm_nudging_flow.png
-  :width: 900
+  :width: 700
   :align: center
   :alt: Alternative text
 
