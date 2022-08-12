@@ -42,6 +42,10 @@ Motivated by the above equation, we construct a novel DeepONet architecture by p
   :align: center
   :alt: Alternative text
 
+.. figure:: images/don_con.png
+  :width: 600
+  :align: center
+  :alt: Alternative text
 
 Results for beta model
 ----------------------
@@ -67,7 +71,20 @@ The objective of this task is to correct the statistics in space and time by uti
   :align: center
   :alt: Alternative text
 
+.. figure:: images/lstm.png
+  :width: 800
+  :align: center
+  :alt: Alternative text
 
+.. figure:: images/lstm_1.png
+  :width: 800
+  :align: center
+  :alt: Alternative text
+  
+ .. figure:: images/lstm_2.png
+  :width: 800
+  :align: center
+  :alt: Alternative text 
 Problem Setup for E3SM
 ----------------------
 
