@@ -55,7 +55,7 @@ An extratropical cyclone (ETC) is defined as a cyclonic structure with no distin
 
 Figure 4. Track density maps for extratropical cyclones (ETCs) tracked in ERA5 reanalysis (top left panel), EAM free-running (CLIM, top right panel),  EAM simulations nudged towards wind fields from ERA5 reanalysis (NDGUV, bottom left panel), and EAM simulations nudged towards wind, temperature, and humidity fields from ERA5 reanalysis (NDGUVTQ, bottom right panel) during the period of 2007--2017. Units are number of 6-hourly TCs occurrences per :math:`5^{o} \times 5^{o}` grid box.
 
-An ETC produced heavy snowfall across the Northeast U.S. during 22-24 January 2016.  Figure 5 shows the horizontal distribution of 850-hPa winds (m/s, vector) and mean sea level pressure (hPa, shading) at 12Z, 23 January 2016. The horizontal distribution of ETC winds and pressure are captured reasonably well in the nudged EAM simulations. See animation [`here <https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/post_processing/storm/TempestExtremes/figure/ETCS/case/animate_etc_trk_2016.gif>`_] for the development of the ETC from 0000 UTC 21 to 1800 UTC 24 January.
+An ETC produced heavy snowfall across the Northeast U.S. during 22-24 January 2016.  Figure 5 shows the horizontal distribution of 850-hPa winds (m/s, vector) and mean sea level pressure (hPa, shading) at 12Z, 23 January 2016. The horizontal distribution of ETC winds and pressure are captured reasonably well in the nudged EAM simulations. See [`animation <https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/post_processing/storm/TempestExtremes/figure/ETCS/case/animate_etc_trk_2016.gif>`_] for the development of the ETC from 0000 UTC 21 to 1800 UTC 24 January.
 
 
 
