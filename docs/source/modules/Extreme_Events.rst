@@ -15,40 +15,46 @@ A tropical cyclones (TC) is defined as a cyclonic structure with a distinct warm
   :align: center
   :alt: Alternative text
 
-  Figure 3. Track density maps for tropical cyclones (TCs) tracked in ERA5 reanalysis (top left panel), EAM free-running (CLIM, top right panel),  an EAM simulation nudged towards wind fields from ERA5 reanalysis (NDGUV, bottom left panel), and an EAM simulation nudged towards wind, temperature and humidity fields from ERA5 reanalysis (NDGUVTQ, bottom right panel) during the period of 2007--2017. Units are number of 6-hourly TCs occurrences per :math:`1^{o} \times 1^{o}` grid box.
+  Figure 1. Track density maps for tropical cyclones (TCs) tracked in ERA5 reanalysis (top left panel), EAM free-running (CLIM, top right panel),  an EAM simulation nudged towards wind fields from ERA5 reanalysis (NDGUV, bottom left panel), and an EAM simulation nudged towards wind, temperature and humidity fields from ERA5 reanalysis (NDGUVTQ, bottom right panel) during the period of 2007--2017. Units are number of 6-hourly TCs occurrences per :math:`1^{o} \times 1^{o}` grid box.
+
 
 .. figure:: Data_figs/Trop_cyc.png
   :width: 900
   :align: center
   :alt: Alternative text
 
-  Figure 4. Tropical cyclone trajectories within [0-70N, 10-160W] during the period of 2007--2017 from ERA5 reanalysis (top left panel), EAM free-running (CLIM, top right panel), an EAM simulation nudged towards wind fields from ERA5 reanalysis (NDGUV, bottom left panel), and an EAM simulation nudged towards wind, temperature and humidity fields from ERA5 reanalysis (NDGUVTQ, bottom right panel). TempestExtremes is used to track TCs in each simulation. Coloring denotes the instantaneous `Saffir–Simpson <https://www.nhc.noaa.gov/aboutsshws.php>`_ category of the tropical cyclone. The categories are computed from sea level pressure and applying the pressure--wind relationship (`Atkinson and Holliday, 1977 <https://journals.ametsoc.org/view/journals/mwre/105/4/1520-0493_1977_105_0421_tcmslp_2_0_co_2.xml>`_, `Knaff and Zehr, 2007 <https://journals.ametsoc.org/view/journals/wefo/22/1/waf965_1.xml>`_). The black dots indicate the track of Hurricane Sandy that hit the United States in 2012.
+  Figure 2. Tropical cyclone trajectories within [0-70N, 10-160W] during the period of 2007--2017 from ERA5 reanalysis (top left panel), EAM free-running (CLIM, top right panel), an EAM simulation nudged towards wind fields from ERA5 reanalysis (NDGUV, bottom left panel), and an EAM simulation nudged towards wind, temperature and humidity fields from ERA5 reanalysis (NDGUVTQ, bottom right panel). TempestExtremes is used to track TCs in each simulation. Coloring denotes the instantaneous `Saffir–Simpson <https://www.nhc.noaa.gov/aboutsshws.php>`_ category of the tropical cyclone. The categories are computed from sea level pressure and applying the pressure--wind relationship (`Atkinson and Holliday, 1977 <https://journals.ametsoc.org/view/journals/mwre/105/4/1520-0493_1977_105_0421_tcmslp_2_0_co_2.xml>`_, `Knaff and Zehr, 2007 <https://journals.ametsoc.org/view/journals/wefo/22/1/waf965_1.xml>`_). The black dots indicate the track of Hurricane Sandy that hit the United States in 2012.
 
 
-Figure 5 further shows the track of Hurricane Sandy from the observations, ERA5 reanalysis, and two nudged EAM simulations. Again, EAM simulates the track of Hurricane Sandy reasonably well when winds are nudged toward reanalysis data. The improvements are even larger when the temperature and humidity are nudged as well.  See animation [`here <https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/post_processing/storm/TempestExtremes/figure/TCS/sandy/animate_sandy.gif>`_] for the development of Hurricane Sandy from 1800 UTC 21 to 1200 UTC 31 October 2012 in the ERA5 reanalysis and nudged EAM simulations. 
+Figure 3 further shows the track of Hurricane Sandy from the observations, ERA5 reanalysis, and two nudged EAM simulations. Again, EAM simulates the track of Hurricane Sandy reasonably well when winds are nudged toward reanalysis data. The improvements are even larger when the temperature and humidity are nudged as well.  See animation [`here <https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/post_processing/storm/TempestExtremes/figure/TCS/sandy/animate_sandy.gif>`_] for the development of Hurricane Sandy from 1800 UTC 21 to 1200 UTC 31 October 2012 in the ERA5 reanalysis and nudged EAM simulations. 
 
-.. figure:: Data_figs/Sandy.png
+  
+.. figure:: Data_figs/sandy.png
   :width: 800
   :align: center
   :alt: Alternative text
 
-  Figure 5. Tropical cyclone trajectories for hurricane Sandy from 1800 UTC 21 to 1200 UTC 31 October 2012 from observations (best track, black dots), ERA5 reanalysis (reference, red line), EAM simulations nudged towards wind fields from ERA5 reanalysis (NDGUV, cyan line) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (NDGUVTQ, blue line). Note that nudging wind and temperature (i.e. NDGUVT) produces similar results as in NDGUVTQ.  Sandy first appeared as a TC on 1200 UTC 22 October, 1800 UTC 23 October and 1200 UTC 24 October in the ERA5 analysis, NDGUV and NDGUVTQ, respectively. 
+  Figure 3. Tropical cyclone trajectories for hurricane Sandy from 1800 UTC 21 to 1200 UTC 31 October 2012 from observations (best track, black dots), ERA5 reanalysis (reference, red line), EAM simulations nudged towards wind fields from ERA5 reanalysis (NDGUV, cyan line) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (NDGUVTQ, blue line). Note that nudging wind and temperature (i.e. NDGUVT) produces similar results as in NDGUVTQ.  Sandy first appeared as a TC on 1200 UTC 22 October, 1800 UTC 23 October and 1200 UTC 24 October in the ERA5 analysis, NDGUV and NDGUVTQ, respectively. 
+
+
 
 
 
 Extratropical Cyclones (ETCs)
 -----------------------------
 
-An extratropical cyclone (ETC) is defined as a cyclonic structure with no distinct warm core. Figure 6 shows the ETC track density maps from ERA5 reanalysis (reference data), an EAM free-running simulation (CLIM), and two nudged EAM simulations (NDGUV and NDGUVTQ). The results are generated by TempestExtremes, and the ETC track density represents the total number of 6-hourly ETC occurrences per :math:`5^{o} \times 5^{o}` grid box. Like for TCs, free-running EAM underestimates ETC frequency. Again, like for TCs, nudging improves the overall statistics of ETCs over the Northern hemisphere storm track regions. 
+An extratropical cyclone (ETC) is defined as a cyclonic structure with no distinct warm core. Figure 4 shows the ETC track density maps from ERA5 reanalysis (reference data), an EAM free-running simulation (CLIM), and two nudged EAM simulations (NDGUV and NDGUVTQ). The results are generated by TempestExtremes, and the ETC track density represents the total number of 6-hourly ETC occurrences per :math:`5^{o} \times 5^{o}` grid box. Like for TCs, free-running EAM underestimates ETC frequency. Again, like for TCs, nudging improves the overall statistics of ETCs over the Northern hemisphere storm track regions. 
+
 
 .. figure:: Data_figs/Track_density_2.png
   :width: 800
   :align: center
   :alt: Alternative text
 
-  Figure 6. Track density maps for extratropical cyclones (ETCs) tracked in ERA5 reanalysis (top right panel), EAM free-running (i.e CLIM, top left panel),  EAM simulations nudged towards wind fields from ERA5 reanalysis (i.e. NDGUV, bottom left panel) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (i.e. NDGUVTQ, bottom right panel)  during the period of 2007--2017. Units are number of 6-hourly TCs occurrences per :math:`5^{o} \times 5^{o}` grid box.
+Figure 4. Track density maps for extratropical cyclones (ETCs) tracked in ERA5 reanalysis (top right panel), EAM free-running (i.e CLIM, top left panel),  EAM simulations nudged towards wind fields from ERA5 reanalysis (i.e. NDGUV, bottom left panel) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (i.e. NDGUVTQ, bottom right panel)  during the period of 2007--2017. Units are number of 6-hourly TCs occurrences per :math:`5^{o} \times 5^{o}` grid box.
 
 An ETC produced heavy snowfall across the Northeast U.S. during 22-24 January 2016.  Figure 7 shows the horizontal distribution of 850-hPa winds (m/s, vector) and mean sea level pressure (hPa, shading) at 12Z, 23 January 2016. The horizontal distribution of ETC winds and pressure are captured reasonably well in the nudged EAM simulations. See animation [`here <https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/post_processing/storm/TempestExtremes/figure/ETCS/case/animate_etc_trk_2016.gif>`_] for the development of the ETC from 0000 UTC 21 to 1800 UTC 24 January.
+
 
 
 .. figure:: Data_figs/Hoz_cal_1.png
@@ -56,30 +62,32 @@ An ETC produced heavy snowfall across the Northeast U.S. during 22-24 January 20
   :align: center
   :alt: Alternative text
 
-  Figure 7. Horizontal distribution of 850-hPa wind (m/s, vector) and mean sea level pressure (hPa, shading) at 12Z, 23 January 2016 from (left panel) ERA5 reanalysis, (middle panel) EAM simulations nudged towards wind fields from ERA5 reanalysis and (right panel) EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis.The black dots denotes the track of the ETC from 12Z 22 to 12 Z 23 January 2016.
+  Figure 5. Horizontal distribution of 850-hPa wind (m/s, vector) and mean sea level pressure (hPa, shading) at 12Z, 23 January 2016 from (left panel) ERA5 reanalysis, (middle panel) EAM simulations nudged towards wind fields from ERA5 reanalysis and (right panel) EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis.The black dots denotes the track of the ETC from 12Z 22 to 12 Z 23 January 2016.
 
 
 Atmospheric rivers (ARs)
 ------------------------
 
-Atmospheric rivers (ARs) are thin and long filamentary structures characterized by high integrated vapor transport `(Payne et al., 2020) <https://www.nature.com/articles/s43017-020-0030-5>`_. The AR event that occurred during February 07--11 2017 caused problems for the Oroville Dam. Figures 8 and 9 show the distribution of the vertically integrated water vapor transport (IVT), and the vertically integrated water vapor (IWV), respectively at 12Z on 08 February 2017. The development of the AR in the nudged EAM simulations agrees reasonably well with the ERA5 reanalysis, owing to the constraints on the large-scale circulation by nudging. See the following animations for the development of the AR during February 07--11 2017 in the ERA5 reanalysis and the nudged EAM simulations 
+Atmospheric rivers (ARs) are thin and long filamentary structures characterized by high integrated vapor transport `(Payne et al., 2020) <https://www.nature.com/articles/s43017-020-0030-5>`_. The AR event that occurred during February 07--11 2017 caused problems for the Oroville Dam. Figures 8 and 9 show the distribution of the vertically integrated water vapor transport (IVT), and the vertically integrated water vapor (IWV), respectively at 12Z on 08 February 2017. The development of the AR in the nudged EAM simulations agrees reasonably well with the ERA5 reanalysis, owing to the constraints on the large-scale circulation by nudging. The AR event during February 07--11 2017 caused the problems with the Oroville Dam. Figures 6 and 7 show the distribution of the vertically integrated water vapor transport (IVT), the vertically integrated water vapor (IWV) at 12Z 08 February 2017, respectively. We can see that the development of the ARs in nudged EAM simulations agrees reasonably well with the ERA5 reanalysis, partly due to the good constrains on the large-scale circulation by nudging. The development of the AR during February 07--11 2017 in the ERA5 reanalysis and the nudged EAM simulations are featured in [`animation 1 <https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/post_processing/storm/TempestExtremes/figure/ARs/case/animate_ivt_201702.gif>`_] 
+and  [`animation 2 <https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/post_processing/storm/TempestExtremes/figure/ARs/case/animate_iwv_201702.gif>`_]
 
-- [`Fig1 <https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/post_processing/storm/TempestExtremes/figure/ARs/animate_ivt_201702.gif>`_] 
-- [`Fig2 <https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/post_processing/storm/TempestExtremes/figure/ARs/animate_iwv_201702.gif>`_]
 
-.. figure:: Data_figs/Vert.png
+.. figure:: Data_figs/vert.png
   :width: 1000
   :align: center
   :alt: Alternative text
 
-  Figure 8. Vertically integrated water vapor transport (IVT, kg~m$^{-1}$~s$^{-1}$) and  mean sea level pressure (contour, hPa)  at 12Z 08 February 2017 from ERA5 reanalysis (left panel), EAM simulations nudged towards wind fields from ERA5 reanalysis (i.e. NDGUV, middle panel) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (i.e. NDGUVTQ, right panel). The vectors are derived from the eastward and northward components of water vapor transport.
+
+  Figure 6. Vertically integrated water vapor transport (IVT, kg m s:math:`^-^2`) and  mean sea level pressure (contour, hPa)  at 12Z 08 February 2017 from ERA5 reanalysis (left panel), EAM simulations nudged towards wind fields from ERA5 reanalysis (i.e. NDGUV, middle panel) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (i.e. NDGUVTQ, right panel). The vectors are derived from the eastward and northward components of water vapor transport.
+
 
 .. figure:: Data_figs/water.png
   :width: 1000
   :align: center
   :alt: Alternative text
 
-  Figure 9. Vertically integrated water vapor (shading, kg~m$^{-2}$), 850-hPa wind fields (vector, m~s$^{-1}$) and mean sea level pressure (contour, hPa) at 12Z 08 February 2017 from  from ERA5 reanalysis (left panel), EAM simulations nudged towards wind fields from ERA5 reanalysis (i.e. NDGUV, middle panel) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (i.e. NDGUVTQ, right panel). The contours in denote the sea level pressure (PSL, hPa).
+  Figure 7. Vertically integrated water vapor (shading, kg m s:math:`^-^2`), 850-hPa wind fields (vector, m/s) and mean sea level pressure (contour, hPa) at 12Z 08 February 2017 from  from ERA5 reanalysis (left panel), EAM simulations nudged towards wind fields from ERA5 reanalysis (i.e. NDGUV, middle panel) and EAM simulations nudged towards wind, temperature and humidity fields from ERA5 reanalysis (i.e. NDGUVTQ, right panel). The contours in denote the sea level pressure (PSL, hPa).
+
 
 
 
