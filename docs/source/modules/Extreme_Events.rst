@@ -32,7 +32,7 @@ Figure 3 further shows the track of Hurricane Sandy from the observations, ERA5 
 
   
 .. figure:: Data_figs/sandy.png
-  :width: 600
+  :width: 400
   :align: center
   :alt: Alternative text
 
