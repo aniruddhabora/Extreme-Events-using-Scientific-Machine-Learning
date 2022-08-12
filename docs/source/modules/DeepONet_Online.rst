@@ -26,6 +26,18 @@ The overarching goal of this study is to train a DeepONet aided neural operator 
 To train the DeepONet based neural operator, we generated the data by solving the two layer QG system for a very long  time interval.
 
 
+Using a variable-separation approach (in space-time), we postulate that the QG flow field can be expressed as
+
+.. math::
+	\psi = \phi(x, y)\zeta(t).
+
+Motivated by the above equation, we construct a novel DeepONet architecture by pairing DeepONet with an LSTM architecture in a single framework in the following manner:
+
+1. The first step is to train a DeepONet to approximate the operator  :math:`\mathcal{G}` in space by mapping the low resolution data  :math:`\psi(\bar{x},\bar{y},t)`   :math:`{\in \mathbb{R}^{24 \times 24}}` to high resolution data  :math:`\Psi(x,y,t)`  :math:`{\in \mathbb{R}^{24 \times 24} \approx \mathcal{P}\left( \mathbb{R}^{128 \times 128}\right)}`, where  :math:`\mathcal{P}` is high order and numerically constructed projection operator. In other words,  we want to approximate  :math:`\phi(x, y)` using a DeepONet. 
+
+2. The second step is to use the high resolution output approximated by DeepONet and incorporate the memory of system by using a Long short-term memory (LSTM) network, which is approximating  :math:`\zeta(t)` using a sequence-to-sequence mapping.  However, the solution of QG system lies in a high dimensional space  :math:`(\mathbb{R}^{24\times24})` space, which is also the dimension of the feature space for training and testing of LSTM, resulting in a computationally taxing process for the training of LSTM. To circumvent this issue instead of vanilla LSTM, we use a 2D Convolutional LSTM, which replaces the binary operation in vanilla LSTM with convolution. 
+
+
 Results for beta model
 ----------------------
 
