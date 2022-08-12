@@ -76,15 +76,18 @@ The objective of this task is to correct the statistics in space and time by uti
   :align: center
   :alt: Alternative text
 
+
 .. figure:: images/lstm_1.png
   :width: 800
   :align: center
   :alt: Alternative text
   
- .. figure:: images/lstm_2.png
+
+.. figure:: images/lstm_2.png
   :width: 800
   :align: center
   :alt: Alternative text 
+
 Problem Setup for E3SM
 ----------------------
 
