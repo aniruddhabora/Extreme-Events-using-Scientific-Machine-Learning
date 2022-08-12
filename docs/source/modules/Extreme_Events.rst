@@ -18,6 +18,7 @@ A tropical cyclone (TC) is defined as a cyclonic structure with a distinct warm 
   Figure 1. Track density maps for tropical cyclones (TCs) tracked in ERA5 reanalysis (top left panel), EAM free-running (CLIM, top right panel), an EAM simulation nudged towards wind fields from ERA5 reanalysis (NDGUV, bottom left panel), and an EAM simulation nudged towards wind, temperature, and humidity fields from ERA5 reanalysis (NDGUVTQ, bottom right panel) during the period of 2007--2017. Units are number of 6-hourly TCs occurrences per :math:`1^{o} \times 1^{o}` grid box.
 
 
+Figure 2 shows the individual TC trajectories within the northeast Pacific and north Atlantic ocean regions, including the total count in each subpanel. It is clear that the nudged simulations produce twice as many TCs than CLIM. Moreover, because the nudged simulations are guided by observed wind patterns, they can reproduce real-world events such as Hurricane Sandy (black dot line) which hit the United States in 2012.  Free-running versions of EAM, such as CLIM, are not expected to reproduce real-world extremes and only their statistics can be compared. 
 .. figure:: Data_figs/Trop_cyc.png
   :width: 900
   :align: center
