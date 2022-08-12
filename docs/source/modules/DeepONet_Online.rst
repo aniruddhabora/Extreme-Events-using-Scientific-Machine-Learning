@@ -180,6 +180,9 @@ Online integration
 Conclusion
 ----------
 
+The major ideas for having an online implementation can be enumerated into the following points:
 
+1. For being able to simulate future climate.
+2. To see if the correction implemented by the method has better effects on the other variables in the model.
 
 
