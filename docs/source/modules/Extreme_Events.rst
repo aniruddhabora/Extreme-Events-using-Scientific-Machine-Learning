@@ -19,6 +19,7 @@ A tropical cyclone (TC) is defined as a cyclonic structure with a distinct warm 
 
 
 Figure 2 shows the individual TC trajectories within the northeast Pacific and north Atlantic ocean regions, including the total count in each subpanel. It is clear that the nudged simulations produce twice as many TCs than CLIM. Moreover, because the nudged simulations are guided by observed wind patterns, they can reproduce real-world events such as Hurricane Sandy (black dot line) which hit the United States in 2012.  Free-running versions of EAM, such as CLIM, are not expected to reproduce real-world extremes and only their statistics can be compared. 
+
 .. figure:: Data_figs/Trop_cyc.png
   :width: 900
   :align: center
