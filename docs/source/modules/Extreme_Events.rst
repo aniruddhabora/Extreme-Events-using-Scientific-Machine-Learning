@@ -75,7 +75,7 @@ and  [`animation 2 <https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_da
 
 
 .. figure:: Data_figs/vert.png
-  :width: 1000
+  :width: 800
   :align: center
   :alt: Alternative text
 
