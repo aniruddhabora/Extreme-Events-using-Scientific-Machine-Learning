@@ -99,6 +99,10 @@ Challenges:
 
 3. To integrate the DeepONet model in E3SM requires writing forward pass of DeepONet in FORTRAN 90
 
+.. figure:: images/online_don.png
+  :width: 600
+  :align: center
+  :alt: Alternative text
 
 
 Conclusion
