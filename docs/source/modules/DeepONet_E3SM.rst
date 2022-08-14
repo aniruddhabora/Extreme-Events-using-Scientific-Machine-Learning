@@ -124,6 +124,13 @@ Solutions:
   :align: center
   :alt: Alternative text
 
+Here is the [`link <https://github.com/zhangshixuan1987/E3SM/blob/e3smv2.0_for_darpa/components/eam/src/physics/cam/nudging.F90>`_] for the module related to nudging (nudging.f90) in E3SM 
+
+.. figure:: images/online_sketch.png
+  :width: 600
+  :align: center
+  :alt: Alternative text
+
 Conclusion
 ----------
 
