@@ -115,6 +115,15 @@ Challenges:
   :alt: Alternative text
 
 
+Solutions:
+
+1. Developed a library for doing encoder, DeepONet and decoder process in FORTRAN 90. 
+
+.. figure:: images/sol.png
+  :width: 600
+  :align: center
+  :alt: Alternative text
+
 Conclusion
 ----------
 
