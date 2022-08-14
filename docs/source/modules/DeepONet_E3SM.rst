@@ -90,7 +90,7 @@ Results
 For the results of the DeepONet click [`here <https://drive.google.com/drive/folders/1rmrz2I5v8Mi5MB3nR90Ny-FyzvdVzx7r?usp=sharing>`_]. This link shows the simulation of the hurricane Sandy in 2012. The results show that the DeepONet can learn the corrective tendency very well and can reproduce the hurrican Sandy.
 
 .. figure:: images/cor.png
-  :width: 600
+  :width: 400
   :align: center
   :alt: Alternative text
   
