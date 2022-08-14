@@ -88,8 +88,18 @@ In this [`link <https://drive.google.com/drive/folders/1POGC_GHiZbbVZr2qUorqqn9Y
 
 
 
-Online integration
-------------------
+Online Integration of DeepONet with E3SM
+----------------------------------------
+
+Challenges:
+
+1. E3SM codebases is primarily written in FORTRAN 90
+
+2. Most of the deep learning framework provides Python APIs. Therefore, proposed DeepONet model is written in Python.
+
+3. To integrate the DeepONet model in E3SM requires writing forward pass of DeepONet in FORTRAN 90
+
+
 
 Conclusion
 ----------
