@@ -142,7 +142,7 @@ require running additional nudged simulations, thus lowering the total cost of t
 Code Setup
 ----------
 
-1. To create a test case, simply add the case you want to the file Model_Cases.py. The file contains instructions on what each parameter represents. Make sure to set the parameters of the case to the ones you want and give a nickname to the case. If you want to double check that the parameters where set correctly for your run, simply type 
+1. To create a test case, simply add the case you want to the file Model_Cases.py. The file contains instructions on what each parameter represents. Make sure to set the parameters of the case to the ones you want and give a nickname to the case. The implementation of the method can be found [`here <https://www.dropbox.com/sh/j7hf8qvja44ghjq/AACYSeMHTNK68NP5mSbfQ5nOa?dl=0>`_]. If you want to double check that the parameters where set correctly for your run, simply type 
 
                  python ./Nonintrusive_Model.py test_case data_info 
 
