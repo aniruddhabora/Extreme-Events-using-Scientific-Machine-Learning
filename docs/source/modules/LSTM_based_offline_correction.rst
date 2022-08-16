@@ -179,6 +179,12 @@ Numerical Results
 
 1. Hurricane Sandy 
 
-             Hurricane Sandy was a tropical cyclone that affected the Caribbeans and the East Coast from 10/23/2012 to 11/02/2012. We train the model,                using 2012 ERA5 and E3SM(NDGUVTQ). CLIM data are used during testing. The time-interval 10/23/2012-11/03/2012 is excluded from training. We then validate the model by comparing its predictiongs with R-nudged data as input for the time-interval of the hurricane. The model can use ERA5 data as labels [`here <https://www.dropbox.com/s/7631nnd6x5q7gc0/TC_Speed_Isopressure_ERA5.mp4?dl=0>`_] as well as E3SM(NDGUVTQ) data [`here <https://www.dropbox.com/s/93ieajcq0ggph45/TC_Speed_Isopressure_Nudged.mp4?dl=0>`_]. Both cases are compared to the ground truth ERA5 dataset. Obviously, using ERA5 labels yields improved results.
+             Hurricane Sandy was a tropical cyclone that affected the Caribbeans and the East Coast from 10/23/2012 to 11/02/2012. We train the model                using 2012 ERA5 and E3SM(NDGUVTQ). CLIM data are used during testing. The time-interval 10/23/2012-11/03/2012 is excluded from training. We then validate the model by comparing its predictiongs with Nudged data as input for the time-interval of the hurricane. The model can use ERA5 data as labels [`here <https://www.dropbox.com/s/7631nnd6x5q7gc0/TC_Speed_Isopressure_ERA5.mp4?dl=0>`_] as well as E3SM(NDGUVTQ) data [`here <https://www.dropbox.com/s/93ieajcq0ggph45/TC_Speed_Isopressure_Nudged.mp4?dl=0>`_]. Both cases are compared to the ground truth ERA5 dataset. Obviously, using ERA5 labels yields improved results.
+             
+
+2. Extratropical Cyclone 2016
+
+             From 01/20/2016 to 01/26/2016, an extratropical cyclone affected the East Coast, resulting in heavy precipitation and snowfall. We train the model, using 2016 ERA5 data, with the time-interval 01/20/2016-01/26/2016 excluded from training. We then validate the model by comparing its predictiongs with Nudged data as input for the time-interval of the hurricane. The model can use ERA5 data as labels [`here <https://www.dropbox.com/s/432csh4rrf2pkie/ETC_Speed_Isopressure.mp4?dl=0>`_].
+
 
 
