@@ -171,13 +171,7 @@ and it will display on the command line the details for the run.
            
                         python ./Nonintrusive_Model.py test_case compute_stats -handle
            
-           where handle can be 'overlap' or 'clean'.
-           
-           * make_video: To create a video from your datasets, simply type 
-           
-                        python ./Nonintrusive_Model.py test_case make_video
-           
-           There are specific parameters that need to be set in Model_Cases.py for what field to plot and over what region. 
+           where handle can be 'overlap' or 'clean'. 
            
 
 
