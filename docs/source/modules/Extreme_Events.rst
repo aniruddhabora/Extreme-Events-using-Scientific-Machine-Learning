@@ -40,8 +40,6 @@ Figure 3 further shows the track of Hurricane Sandy from the observations, ERA5 
 
 
 
-
-
 Extratropical Cyclones (ETCs)
 -----------------------------
 
@@ -64,7 +62,7 @@ An ETC produced heavy snowfall across the Northeast U.S. during 22-24 January 20
   :align: center
   :alt: Alternative text
 
-  Figure 5. Horizontal distribution of 850-hPa wind (m/s, vector) and mean sea level pressure (hPa, shading) at 12Z, 23 January 2016 from (left panel) ERA5 reanalysis, (middle panel) EAM simulations nudged towards wind fields from ERA5 reanalysis and (right panel) EAM simulations nudged towards wind, temperature, and humidity fields from ERA5 reanalysis.The black dots denotes the track of the ETC from 12Z 22 to 12 Z 23 January 2016. The reanalysis and EAM simulations are regrided to the same :math:`1^{o} \times 1^{o}` grid box in horizonal for comparison.   
+  Figure 5. Horizontal distribution of 850-hPa wind (m s math:`^{-1}`, vector) and mean sea level pressure (hPa, shading) at 12Z, 23 January 2016 from (left panel) ERA5 reanalysis, (middle panel) EAM simulations nudged towards wind fields from ERA5 reanalysis and (right panel) EAM simulations nudged towards wind, temperature, and humidity fields from ERA5 reanalysis.The black dots denotes the track of the ETC from 12Z 22 to 12 Z 23 January 2016. The reanalysis and EAM simulations are regrided to the same :math:`1^{o} \times 1^{o}` grid box in horizonal for comparison.   
 
 
 Atmospheric rivers (ARs)
@@ -77,11 +75,16 @@ An atmospheric rivers (AR) is a thin and long filamentary structure characterize
   :align: center
   :alt: Alternative text
   
-Figure 5. Global distribution of annual AR frequency averaged over the period of 2007-2017 derived from ERA5 reanalysis (top left panel), EAM free-running (CLIM, top right panel),  EAM simulations nudged towards wind fields from ERA5 reanalysis (NDGUV, bottom left panel), and EAM simulations nudged towards wind, temperature, and humidity fields from ERA5 reanalysis (NDGUVTQ, bottom right panel). Units are mean AR frequency over a :math:`5^{o} \times 5^{o}` grid box. For each grid cell, the frequency shown represents the number of time steps the grid cell was part of AR divided by the total number of time steps in the time period. The frequency is calculated for each year from 2007 to 2017, then averaged over the whole 11-year period. The detection algorithm in TempestExtremes was applied to identify ARs in ERA5 reanalysis and EAM simulations.  
+Figure 5. Global distribution of mean annual AR frequency (%) over the period of 2007-2017 from ERA5 reanalysis (top left panel), EAM free-running (CLIM, top right panel),  EAM simulations nudged towards wind fields from ERA5 reanalysis (NDGUV, bottom left panel), and EAM simulations nudged towards wind, temperature, and humidity fields from ERA5 reanalysis (NDGUVTQ, bottom right panel). Units are mean AR frequency over a :math:`5^{o} \times 5^{o}` grid box. For each grid cell, the frequency shown represents the number of time steps the grid cell was part of AR divided by the total number of time steps in the time period. The frequency is calculated for each year from 2007 to 2017, then averaged over the whole 11-year period. The detection algorithm in TempestExtremes was applied to identify ARs in ERA5 reanalysis and EAM simulations.  
 
+Figure 6 further shows the annual mean water vapor transport associated with AR. Consistent with the results in Figure 5, there is an overestimation of AR-associated water vapor transport in EAM free-running simulation compared to ERA5 reanalysis (reference). In contrast, nudging improves the agreement of the AR-associated water vapor transport in EAM simulations with the ERA5 reanalysis. 
 
-Track density maps for extratropical cyclones (ETCs) tracked in ERA5 reanalysis (top left panel), EAM free-running (CLIM, top right panel),  EAM simulations nudged towards wind fields from ERA5 reanalysis (NDGUV, bottom left panel), and EAM simulations nudged towards wind, temperature, and humidity fields from ERA5 reanalysis (NDGUVTQ, bottom right panel) during the period of 2007--2017. Units are number of 6-hourly TCs occurrences per :math:`5^{o} \times 5^{o}` grid box. The resolution for ERA5 reanalysis is :math:`0.25^{o} \times 0.25^{o}`, while the resolution for all EAM simulations is :math:`1^{o} \times 1^{o}` in horizontal. 
-
+.. figure:: Data_figs/ar_ivt_ann_mean_2007-2017.png
+  :width: 800
+  :align: center
+  :alt: Alternative text
+  
+Figure 6. Global distribution of annual mean vertically integrated water vapor transport (IVT, shading, kg m s :math:`^{-2}`) associated with ARs over the period of 2007-2017 from ERA5 reanalysis (top left panel), EAM free-running (CLIM, top right panel),  EAM simulations nudged towards wind fields from ERA5 reanalysis (NDGUV, bottom left panel), and EAM simulations nudged towards wind, temperature, and humidity fields from ERA5 reanalysis (NDGUVTQ, bottom right panel). The IVT in ERA5 reanalysis and EAM simulations are averaged over a :math:`5^{o} \times 5^{o}` grid box for comparision. The algorithm in TempestExtremes was applied to identify IVT associated with ARs in ERA5 reanalysis and EAM simulations. The vectors in each panel represents the meridional and zonal components of IVT.   
 
 The AR event that occurred during February 07--11 2017 caused problems for the Oroville Dam. Figures 6 and 7 show the distribution of the vertically integrated water vapor transport (IVT), and the vertically integrated water vapor (IWV), respectively at 12Z on 08 February 2017. The development of the AR in the nudged EAM simulations agrees reasonably well with the ERA5 reanalysis, owing to the constraints on the large-scale circulation by nudging. The development of the AR during February 07--11 2017 in the ERA5 reanalysis and the nudged EAM simulations are featured in [`animation 1 <https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/post_processing/storm/TempestExtremes/figure/ARs/case/animate_ivt_201702.gif>`_] 
 and  [`animation 2 <https://portal.nersc.gov/cfs/e3sm/zhan391/darpa_temporary_data_share/post_processing/storm/TempestExtremes/figure/ARs/case/animate_iwv_201702.gif>`_]
