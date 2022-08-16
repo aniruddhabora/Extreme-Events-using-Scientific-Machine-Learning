@@ -44,7 +44,7 @@ to a 600-valued vector. This layer has a :math:`\tanh` activation function. The 
 is then passed as input to a long short-term memory (LSTM) neural network. The output of the neural network is then passed through an output fully connected neural network to produce the final data-informed corrected predictions. The output layer has a linear activation function.
 
 
-.. figure:: images/ML_Architecture.png
+.. figure:: images/ML_Architecture_new.png
   :width: 600
   :align: center
   :alt: Alternative text
@@ -96,9 +96,16 @@ The resulting dataset can be seen in the figure below.
   :alt: Alternative text
 
 
-This approach yielded improved results in the 2-layer QG model that were able to generalize outside the training set. 
+This approach yielded improved results in the 2-layer QG model that were able to generalize outside the training set. In the figure below, best results obtained by training on nudged data (left column) for an ensemble of 10 neural networks are compared to training on R-nudged data (right column). Results are shown for flow parameters :math:`\beta = 2` (beta-plane approximation coefficient) and :math:'r = 0.1' (linear bottom-drag coefficient). In addition, the results for R-nudged data are computed using a time-interval of a flow that was not used during training. 
 
 .. figure:: images/Rnudged_QG_Results.png
+  :width: 600
+  :align: center
+  :alt: Alternative text
+
+To further highlight the generalization capabilities of the scheme, the figure below is shown. Here, the LSTM was trained on flow data with parameters :math:`\beta = 2` and :math:'r = 0.1' but the results are shown for flow parameters :math:`\beta = 2` and :math:'r = 0.2'.
+
+.. figure:: images/Rnudged_QG_results_out_of_sample.png
   :width: 600
   :align: center
   :alt: Alternative text
