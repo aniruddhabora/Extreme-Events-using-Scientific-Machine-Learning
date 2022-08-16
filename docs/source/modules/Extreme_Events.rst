@@ -76,7 +76,7 @@ An atmospheric rivers (AR) is a thin and long filamentary structure characterize
   :width: 800
   :align: center
   :alt: Alternative text
-
+  
 Figure 5. Global distribution of annual AR frequency averaged over the period of 2007-2017 derived from ERA5 reanalysis (top left panel), EAM free-running (CLIM, top right panel),  EAM simulations nudged towards wind fields from ERA5 reanalysis (NDGUV, bottom left panel), and EAM simulations nudged towards wind, temperature, and humidity fields from ERA5 reanalysis (NDGUVTQ, bottom right panel). Units are mean AR frequency over a :math:`5^{o} \times 5^{o}` grid box. For each grid cell, the frequency shown represents the number of time steps the grid cell was part of AR divided by the total number of time steps in the time period. The frequency is calculated for each year from 2007 to 2017, then averaged over the whole 11-year period. The detection algorithm in TempestExtremes was applied to identify ARs in ERA5 reanalysis and EAM simulations.  
 
 
