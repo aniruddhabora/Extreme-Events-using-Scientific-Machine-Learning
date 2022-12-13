@@ -131,13 +131,6 @@ Here is the [`link <https://github.com/zhangshixuan1987/E3SM/blob/e3smv2.0_for_d
   :align: center
   :alt: Alternative text
 
-Conclusion
-----------
-
-The major ideas for having an online implementation can be enumerated into the following points:
-
-1. For being able to simulate future climate.
-2. To see if the correction implemented by the method has better effects on the other variables in the model.
 
 Transfer Learning
 -----------------
@@ -166,4 +159,13 @@ Previous results shows the effectiveness of the DeepONet for the patch we select
   :width: 600
   :align: center
   :alt: Alternative text
+
+
+Conclusion
+----------
+
+The major ideas for having an online implementation can be enumerated into the following points:
+
+1. For being able to simulate future climate.
+2. To see if the correction implemented by the method has better effects on the other variables in the model.
 
