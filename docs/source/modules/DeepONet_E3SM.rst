@@ -142,24 +142,20 @@ Previous results shows the effectiveness of the DeepONet for the patch we select
   :align: center
   :alt: Alternative text
 
-
 .. figure:: images/fig_6.png
   :width: 600
   :align: center
   :alt: Alternative text
-
-
+  
 .. figure:: images/fig_7.png
   :width: 600
   :align: center
   :alt: Alternative text
-  
-  
-  .. figure:: images/fig_8.png
+ 
+.. figure:: images/fig_8.png
   :width: 600
   :align: center
   :alt: Alternative text
-
 
 Conclusion
 ----------
