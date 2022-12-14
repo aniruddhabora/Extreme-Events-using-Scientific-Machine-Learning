@@ -189,6 +189,20 @@ Numerical Results
 
 3. Mean IVT Predictions
 
+To showcase the ability of the model to extract local features, the time-averaged integrated vapor transport is computed. Results are averaged over the time period 2007-2017. Integrated vapor transport is defined as
+
+:math:`\text{IVT}(t,\phi,\theta) = \sqrt{\text{IVTU}^2(t,\phi,\theta) +\text{IVTV}^2(t,\phi,\theta)},`
+
+where
+
+:math:`\text{IVTU}(t,\phi,\theta) = \sum_{k=1}^{N_z}U(t,\phi,\theta;k) Q(t,\phi,\theta;k) \frac{\Delta P(t,\phi,\theta;k}{P_m(t,\phi,\theta;k},`
+
+and
+
+:math:`\text{IVTV}(t,\phi,\theta) = \sum_{k=1}^{N_z}V(t,\phi,\theta;k) Q(t,\phi,\theta;k) \frac{\Delta P(t,\phi,\theta;k}{P_m(t,\phi,\theta;k}.`
+
+:math:`P_m` is the mean pressure at sigma-level :math:`k`, while :math:`\Delta P` is the total pressure along the vertical extent of the sigma-level. Results are shown below. Subfigure (a) corresponds to a neural-network that uses a global region from which it extracts all its features. Subfigure (b) corresponds to a neural-network that splits the domain into 25 subregions. Both models use the same total number of convolution filters. Hence, it is apparent that extracting local features yields considerable improvement in the predictions of strongly anisotropic fields like IVT. 
+
 .. figure:: images/IVT_Predictions.png
   :width: 600
   :align: center
