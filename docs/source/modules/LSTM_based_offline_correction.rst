@@ -187,4 +187,10 @@ Numerical Results
              From 01/20/2016 to 01/26/2016, an extratropical cyclone affected the East Coast, resulting in heavy precipitation and snowfall. We train the model, using 2016 ERA5 data, with the time-interval 01/20/2016-01/26/2016 excluded from training. We then validate the model by comparing its predictiongs with Nudged data as input for the time-interval of the hurricane. The model can use ERA5 data as labels [`here <https://www.dropbox.com/s/432csh4rrf2pkie/ETC_Speed_Isopressure.mp4?dl=0>`_].
 
 
+3. Mean IVT Predictions
+
+.. figure:: images/IVT_Predictions.png
+  :width: 600
+  :align: center
+  :alt: Alternative text
 
