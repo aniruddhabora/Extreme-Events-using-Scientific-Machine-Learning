@@ -157,6 +157,8 @@ Previous results shows the effectiveness of the DeepONet for the patch we select
   :align: center
   :alt: Alternative text
 
+Results for pre-trained DeepONet in different Zones
+---------------------------------------------------
 .. figure:: images/fig_9.png
   :width: 600
   :align: center
@@ -167,7 +169,20 @@ Previous results shows the effectiveness of the DeepONet for the patch we select
   :align: center
   :alt: Alternative text  
   
-  
+Loss comparision strategy-I
+---------------------------
+.. figure:: images/fig_11.png
+  :width: 600
+  :align: center
+  :alt: Alternative text  
+
+Loss comparision strategy-II
+----------------------------
+.. figure:: images/fig_12.png
+  :width: 600
+  :align: center
+  :alt: Alternative text  
+
 
 Conclusion
 ----------
