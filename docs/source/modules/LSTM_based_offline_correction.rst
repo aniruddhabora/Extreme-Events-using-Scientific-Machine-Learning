@@ -13,7 +13,7 @@ fact that the goal is not to make phase corrections at each time-step but retrie
 for the current flow parameters.
 
 
-.. figure:: images/Methodology_Plot.png
+.. figure:: images/Generic_Methodology.png
   :width: 600
   :align: center
   :alt: Alternative text
