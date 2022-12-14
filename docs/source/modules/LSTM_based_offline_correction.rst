@@ -195,13 +195,13 @@ To showcase the ability of the model to extract local features, the time-average
 
 where
 
-:math:`\text{IVTU}(t,\phi,\theta) = \sum_{k=1}^{N_z}U(t,\phi,\theta;k) Q(t,\phi,\theta;k) \frac{\Delta P(t,\phi,\theta;k}{P_m(t,\phi,\theta;k},`
+:math:`\text{IVTU}(t,\phi,\theta) = \sum_{k=1}^{N_z}U(t,\phi,\theta;k) Q(t,\phi,\theta;k) \frac{\Delta P(t,\phi,\theta;k)}{P_m(t,\phi,\theta;k)},`
 
 and
 
-:math:`\text{IVTV}(t,\phi,\theta) = \sum_{k=1}^{N_z}V(t,\phi,\theta;k) Q(t,\phi,\theta;k) \frac{\Delta P(t,\phi,\theta;k}{P_m(t,\phi,\theta;k}.`
+:math:`\text{IVTV}(t,\phi,\theta) = \sum_{k=1}^{N_z}V(t,\phi,\theta;k) Q(t,\phi,\theta;k) \frac{\Delta P(t,\phi,\theta;k)}{P_m(t,\phi,\theta;k)}.`
 
-:math:`P_m` is the mean pressure at sigma-level :math:`k`, while :math:`\Delta P` is the total pressure along the vertical extent of the sigma-level. Results are shown below. Subfigure (a) corresponds to a neural-network that uses a global region from which it extracts all its features. Subfigure (b) corresponds to a neural-network that splits the domain into 25 subregions. Both models use the same total number of convolution filters. Hence, it is apparent that extracting local features yields considerable improvement in the predictions of strongly anisotropic fields like IVT. 
+:math:`P_m` is the mean pressure at sigma-level :math:`k`, while :math:`\Delta P` is the total pressure along the vertical extent of the sigma-level. Results are shown below. The top row of each sibfigure displays the mean IVT as computed from ERA5 reanalysis data. The following two rows show the bias of other datasets compared to ERA5. The second rows show the bias for Nudged and CLIM datasets. Finally, the third row shows biases computed for the LSTM-corrected datasets produced with input data Nudged (validation) and CLIM (testing) respectively. Subfigure (a) corresponds to a neural-network that uses a global region from which it extracts all its features. Subfigure (b) corresponds to a neural-network that splits the domain into 25 subregions. Both models use the same total number of convolution filters. Hence, it is apparent that extracting local features yields considerable improvement in the predictions of strongly anisotropic fields like IVT. 
 
 .. figure:: images/IVT_Predictions.png
   :width: 600
