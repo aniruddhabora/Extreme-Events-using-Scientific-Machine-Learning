@@ -157,6 +157,18 @@ Previous results shows the effectiveness of the DeepONet for the patch we select
   :align: center
   :alt: Alternative text
 
+Results for Pre-trianed DeepONet in Zone-I
+
+.. figure:: images/fig_9.png
+  :width: 600
+  :align: center
+  :alt: Alternative text
+  
+.. figure:: images/fig_10.png
+  :width: 600
+  :align: center
+  :alt: Alternative text  
+
 Conclusion
 ----------
 
