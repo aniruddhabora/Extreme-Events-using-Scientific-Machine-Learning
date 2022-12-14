@@ -183,6 +183,21 @@ Loss comparision strategy-II
   :align: center
   :alt: Alternative text  
 
+Encoder Decoder parameter analysis
+----------------------------------
+.. figure:: images/fig_13.png
+  :width: 600
+  :align: center
+  :alt: Alternative text  
+  
+DeepONet parameter analysis
+---------------------------
+
+.. figure:: images/fig_14.png
+  :width: 600
+  :align: center
+  :alt: Alternative text  
+
 
 Conclusion
 ----------
