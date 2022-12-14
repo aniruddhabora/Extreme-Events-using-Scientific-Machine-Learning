@@ -44,7 +44,7 @@ to a 600-valued vector. This layer has a :math:`\tanh` activation function. The 
 is then passed as input to a long short-term memory (LSTM) neural network. The output of the neural network is then passed through an output fully connected neural network to produce the final data-informed corrected predictions. The output layer has a linear activation function.
 
 
-.. figure:: images/ML_Architecture_new.png
+.. figure:: images/E3SM_LSTM_Plot.pdf
   :width: 600
   :align: center
   :alt: Alternative text
