@@ -37,7 +37,7 @@ that maps :math:`X^{\text{ERA5}}` to the coarse resolution.
 Model Architecture
 ------------------
 
-This approach employs Long short-term memory (LSTM) neural networks. Of great interest is the ability of this model to generalize beyond the data seen during training. At first this is investigated in out-of-sample data from the training flow and later further tested
+In the current implementation, training is done on a layer-by-layer basis. A schematic of the configuration for training on a particular layer is shown below. The model receives as input the predictive variables :math:`\mathbf{X}=\mathbf{X}(\phi,\theta,t;k)`. The input receives snapshots of the entire horizontal discretization of the layer. Afterwards, a custom "split" layer separates the inputs into non-overlapping subregions. These subregions are periodically padded via a custom padding process, tasked with respecting the spherical periodicity of the domain. Then, each subregion is independently passed through a series of convolutional layers. The purpose of this process is to extract local features in each subregion, given the anisotropic nature of the flow. This approach employs Long short-term memory (LSTM) neural networks. Of great interest is the ability of this model to generalize beyond the data seen during training. At first this is investigated in out-of-sample data from the training flow and later further tested
 on different on unseen data. The architecture of the LSTM-based neural-network is shown in the figure
 below. It consists of an input fully connected layer that compresses prognostic variables of a single level
 to a 600-valued vector. This layer has a :math:`\tanh` activation function. The compressed vector
@@ -45,6 +45,11 @@ is then passed as input to a long short-term memory (LSTM) neural network. The o
 
 
 .. figure:: images/E3SM_LSTM_Plot.png
+  :width: 600
+  :align: center
+  :alt: Alternative text
+
+.. figure:: images/Projection_Scheme.png
   :width: 600
   :align: center
   :alt: Alternative text
