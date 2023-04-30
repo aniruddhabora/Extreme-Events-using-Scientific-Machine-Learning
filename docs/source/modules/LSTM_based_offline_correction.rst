@@ -207,4 +207,17 @@ and
   :width: 600
   :align: center
   :alt: Alternative text
+  
+  
+4. Evaluating out-of-sample strong El Nino
+
+In this subsection we study the ability of the non-intrusive model to predict effects of strong El Ni\~no without including similar years in training. The term El Ni\~no stems from the warm phase of the El-Ni\~no-Southern Oscillation (ENSO). The plethora of indices used to monitor El Nino, are mostly based on sea-surface temperature (SST) anomalies averaged across a given region. Usually, the anomalies are computed relative to a base period of 30 years. However, Since we have 11 years of training data and the E3SM model receives SST as a boundary condition, we restrict our study in two ways. First, we study the time-interval 2015-2017, where a strong El Nino event was observed. Secondly, we replace SST with temperature at the lowest sigma-level of the atmosphere. Emulating the geographical extent of Ni\~no 3.4 index, which is the most commonly used index to define El Ni\~no events, we plot the monthly mean temperature deviations for the time period 2015-2017, for the geographical region :math:`[5\text{S},5\text{N}] \times [120\text{W},170\text{W}]`.
+
+.. figure:: images/Milestone11_El_Nino_Nudged.png
+  :width: 600
+  :align: center
+  :alt: Alternative text
+  
+Results for the nudged simulation are shown in the figure above. The years 2015-2017 where excluded from training, and only data from the years 2007-2011 were included. In that time period, no strong El Ni\~no events were observed. However, the LSTM corrections can visible correct the over-predictions in the mean temperature variations, predicted by the Nudged E3SM simulation, compared to ERA5. This is a testament to the ability of the model to extrapolate to unseen data. 
+  
 
