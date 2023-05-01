@@ -138,6 +138,41 @@ This property improves significantly the accuracy of the resulted ML scheme. The
 R-nudged solution indeed coincide with the coarse-scale free running spectra. In addition, the R-nudged data still follow the reference data, allowing for a mapping between :math:`\left( U,V,T,Q\right)^{\text{R-Nudge}}` and :math:`\left( U,V,T,Q \right)^{\text{ERA5}}`. This process does not
 require running additional nudged simulations, thus lowering the total cost of the training scheme.
 
+
+
+Value of Data Analysis
+----------------------
+
+The goal of this study is to identify optimal training datasets for predicting accurate statistics of extreme events for different climate free-runs. This is particularly important for this application as we have a vast set of data points and outputs, which if used inefficiently can lead to large wastes of computational time. It is also expected that different data-points will be crucial for different target extreme events. As a result, a number of different targets are described in the next subsection, and detailed results will be given in the future reports. For any form of value of data analysis, a method to estimate uncertainty in the predictions of the trained models is needed. To quantify uncertainty in the neural network predictions, an ensemble of neural networks, of size $N$, is employed. These neural networks are trained over the same dataset and have the same architecture and hyperparameters. The only difference between them is that the weights of each member of the ensemble are initialized with different values sampled from a random process. Using this ensemble, model uncertainty can be quantified via the variance
+
+
+:math:`\sigma_{\epsilon}(\textbf{X}) = \sqrt{\sum_{n=1}^N  \frac{\left( Y_n(\textbf{X}) - \overline{Y}(\textbf{X})\right)^2}{N-1} }`
+
+
+where :math:`\textbf{X}` corresponds to the input data and $Y$ is the quantity of interest. $Y_n$ is the prediction of the nth neural network of the ensemble, and 
+
+:math:`\overline{Y}(\textbf{X}) = \frac{1}{N} \sum_{i=1}^N Y_n(\textbf{X})`
+
+
+This metric can be used to assess the statistical characteristics of spatiotemporal local generalization errors as well as uncertainty in non-local quantities, such as PCA modes and global pdf predictions.
+
+The iterative process for active sampling can be seen below. First, a small training set denoted by :math:`\Theta` is randomly selected. An ensemble of neural networks is trained over :math:`\Theta`. Then, the trained neural networks are used to predict the proposed acquisition function for a target quantity :math:`y`. The acquisition function is computed over the entire sampling dataset. Once the largest values of the acquisition function are found, the data points are added to the training set :math:`\Theta`. The number of data points added to the training set is a hyperparameter of the scheme. The neural networks are then trained over the new training set, with re-initialized weights. The process is repeated until satisfactory accuracy has been achieved. 
+
+.. figure:: images/Active_Search_Methodology.png
+  :width: 600
+  :align: center
+  :alt: Alternative text
+
+
+In the figure below, a comparison between Active Sampling and standard Monte Carlo sampling is shown. Results are shown for low-atmosphere temperature over North America. Mean-square error and Log-pdf error are used as metrics. With respect to the mean-square error, both methods appear to converge at the same rate. However, active sampling converges faster with the respect to the log-PDF error. These two results hint that the active sampling approach allows for faster sampling of extreme events in the behaviour of the dominant PCA mode. This behaviour will be evaluated on other quantities as well, to see its range of applicability. Of particular interest is the convergence properties for PCA modes of other physical quantities as well as indicators that are used as priors for extreme events.
+
+.. figure:: images/MSE_E3SM_error_Plot3.png
+  :width: 600
+  :align: center
+  :alt: Alternative text
+
+
+
 Code Setup
 ----------
 
@@ -172,6 +207,7 @@ and it will display on the command line the details for the run.
            
            where handle can be 'overlap' or 'clean'. 
            
+
 
 
 Numerical Results
