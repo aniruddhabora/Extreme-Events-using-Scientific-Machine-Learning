@@ -172,6 +172,8 @@ In the figure below, a comparison between Active Sampling and standard Monte Car
   :alt: Alternative text
 
 
+Clustering Analysis
+-------------------
 
 Code Setup
 ----------
