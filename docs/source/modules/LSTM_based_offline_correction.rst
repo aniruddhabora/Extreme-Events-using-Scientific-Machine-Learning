@@ -223,8 +223,11 @@ and it will display on the command line the details for the run.
            where handle can be 'overlap' or 'clean'. 
            
 3. To perform the clustering analysis, simply use the scikit-learn KMeans function to train the model
+
            * model = KMeans(n_clusters=K).fit(data)
-Here, the data variable is the PCA time coefficients and K is the number of clusters of your choice. The resulting model produces centroids and labels, and the model can be used to predict the labels of new points. The labels of the optimal training samples can be predicted as follows:
+           
+           Here, the data variable is the PCA time coefficients and K is the number of clusters of your choice. The resulting model produces centroids and labels, and the model can be used to predict the labels of new points. The labels of the optimal training samples can be predicted as follows:
+  
            * optimal_labels = model.predict(optimal_samples)
 
 
