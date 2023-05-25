@@ -174,11 +174,20 @@ In the figure below, a comparison between Active Sampling and standard Monte Car
 
 Clustering Analysis
 -------------------
-Upon selecting the training points, the next goal is to determine if the points that were chosen by Active Sampling have any relevant physical meaning. Are these points related to important system dynamics? Can these points be attributed to physical phenomena such as turbulence, atmospheric rivers, tropical cyclones, etc.? Does their physical interpretation depend on the target's predicted output? In this section, a framework is developed to mechanistically identify and define the dynamics of these points of interest. Clustering is applied to the original data set to build a grey-box reduced-order model of the dynamics of the system. Clustering is a form of reduced-order modeling in which observations are clustered into centroids.  In the case of a dynamic system, the observations are snapshots of the system. Cluster centroids are selected from the entire reference dataset of PCA coefficients using the standard $k$-means algorithm with $k$-means++ for seed initialization. The first step in all clustering methods is to choose the number of clusters, $K$. One popular method is the ``elbow method'' which involves calculating the within-cluster-sum of squared errors for multiple models with different values for $K$. Then, the user can choose the smallest $K$ that results in a low error. The resulting cluster centroids can be projected back onto the PCA modes (eigenvectors) to visualize the spatial patterns. These cluster centroids are then used to predict the cluster labels of the new subset of the data chosen by the active sampling algorithm. This step assigns the optimal points to relevant cluster centers which allow a scientist to determine if the points chosen by the active sampling algorithm are associated with noteworthy dynamical phenomena. The ultimate goal is to interpret the physical meaning of the points that were chosen for training.
+Upon selecting the training points, the next goal is to determine if the points that were chosen by Active Sampling have any relevant physical meaning. Are these points related to important system dynamics? Can these points be attributed to physical phenomena such as turbulence, atmospheric rivers, tropical cyclones, etc.? Does their physical interpretation depend on the target's predicted output? 
 
+A framework is developed to mechanistically identify and define the dynamics of these points of interest. Clustering is applied to the original data set to build a grey-box reduced-order model of the dynamics of the system. Clustering is a form of reduced-order modeling in which observations are clustered into centroids.  In the case of a dynamic system, the observations are snapshots of the system. Cluster centroids are selected from the entire reference dataset of PCA coefficients using the standard $k$-means algorithm with $k$-means++ for seed initialization. The first step in all clustering methods is to choose the number of clusters, $K$. One popular method is the "elbow method" which involves calculating the within-cluster-sum of squared errors for multiple models with different values for $K$. Then, the user can choose the smallest $K$ that results in a low error. The resulting cluster centroids can be projected back onto the PCA modes (eigenvectors) to visualize the spatial patterns. These cluster centroids are then used to predict the cluster labels of the new subset of the data chosen by the active sampling algorithm. This step assigns the optimal points to relevant cluster centers which allow a scientist to determine if the points chosen by the active sampling algorithm are associated with noteworthy dynamical phenomena. The ultimate goal is to interpret the physical meaning of the points that were chosen for training.
 
-
-
+.. figure:: images/cluster6.png
+  :width: 600
+  :align: center
+  :alt: temperature clusters
+  
+.. figure:: images/cluster6_freq_months.png
+  :width: 600
+  :align: center
+  :alt: temperature cluster frequency
+  
 Code Setup
 ----------
 
