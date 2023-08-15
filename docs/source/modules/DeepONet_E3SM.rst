@@ -77,7 +77,6 @@ Code Setup
 			* Now type sbatch job.sbatch in your terminal.
 
 
-For the implementation and code click [`here <https://github.com/raj-brown/darpa_climate_code>`_]
 
 Results
 -------
